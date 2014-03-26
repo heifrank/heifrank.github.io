@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>windows下用eclipse开发C++</title>
+        <title>折腾博客</title>
         <meta charset="utf-8" />
 
 
@@ -51,50 +51,31 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark"
-                   title="Permalink to windows下用eclipse开发C++">windows下用eclipse开发C++</a></h2>
+                <a href="http://heifrank.github.io/pages/2014/03/26/blog_notice.html" rel="bookmark"
+                   title="Permalink to 折腾博客">折腾博客</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2013-10-10T00:00:00">
-                2013-10-10
+              <abbr class="published" title="2014-03-26T00:00:00">
+                2014-03-26
               </abbr>
               <address class="vcard author">
                 By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <p>eclipse + cdt + mingw的一些配置
-下载标准版本的eclipse（我用的是4.3.0版本的，也叫kepler），下载对应版本的CDT(8.2.0)，安装mingw，我是用mingw-get-inst-20120426.exe装的（这个版本我用的比较舒服，如果在官网上下载mingw的话，安装完可能缺少libiconv2，它是个windows运行的dll库，一般电脑上貌似没有这个库，如果没有它的话不能执行make命令），选装gcc和g++两个组件，如果按照默认路径（C:\MinGW）装可能会碰到少一点的问题。</p>
-<p>cdt有两种下载方式，可以在eclipse的help中通过install安装，也可以在网上下载，然后把下载完的压缩包解压，把里面的features文件夹和plugins文件夹复制到eclipse的根目录中，和eclipse的根目录中的features、plugins文件夹合并就行。</p>
-<p>1、头文件unresolved问题<br />
-这个可以通过在环境变量中设置PATH=MinGW\bin来解决，如果设置了这个path的话，那么eclipse会自动找mingw的一些头文件库，加入到工程中的include文件夹下面（刚创建工程的时候只有一个src目录，没有include目录）。不幸的是，有的时候可能不起作用，我的就是加入了变量，但是不管用，后来把变量删了，又重新加入了一次才管用，很奇怪。</p>
-<p>如果真的加了变量，再删除，再加入变量还是不可以找到头文件目录的话，可以用下面的方法：<br />
-在具体的工程中，加入依赖的库文件：<br />
-MinGW/include<br />
-MinGW/lib/gcc/mingw32/4.6.2/include<br />
-MinGW/lib/gcc/mingw32/4.6.2/include/c++<br />
-MinGW/lib/gcc/mingw32/4.6.2/include/c++/backward<br />
-MinGW/lib/gcc/mingw32/4.6.2/include/c++/mingw32<br />
-MinGW/lib/gcc/mingw32/4.6.2/include-fixed<br />
-在一个工程中导入这些配置后，可以export这个配置到一个xml中，这样方便以后写其他工程。</p>
-<p>另外还有一个解决办法就是在环境变量中添加这些值，需要的有<br />
-PATH=MinGW\bin（这个确定可以找到一些gcc.exe，make.exe等二进制文件，但是不确定能否找到相关的头文件库）<br />
-C_INCLUDE_PATH对应第一个路径<br />
-CPLUS_INCLUDE_PATH对应第二到第六个路径（第二个路径和第六个路径我不知道该归为哪里）<br />
-LIBRARY_PATH的=MinGW\lib（貌似不设置也可以）  </p>
-<p>2、cannot run program "g++"<br />
-这个是下载了cdt之后，装好mingw出现的问题，在命令行中我们直接gcc什么的都没问题，说明环境变量中有mingw的相关路径，但是eclipse中没有，解决办法是在eclipse安装包里的plugins目录下，有个叫org.eclipse.cdt.core.win32.x86_5.2.0.201306112328.jar的压缩包，解压这个压缩包，然后把这个jar删除掉，就可以了。注意解压的不是org.eclipse.cdt.core.win32_5.3.0.201306112328.jar!!!</p>
-<p>3、build正常，可以生成.exe，但是一执行就显示terminated xxx.exe [C/C++ Application]<br />
-这个有两个解决办法，一个是在你创建的工程中配置linker，在linker-flags中写入-static-libgcc -static-libstdc++<br />
-还有一个解决办法就是在run configurations里配置你要运行的.exe的environment，加入一组键值对path-&gt;mingw\bin<br />
-有些人可能在那个window的preferences里面设置environment，但是这个设置有时候好使有时候不好使，坑爹。</p>
+              <p>博客出问题好久了，一直没有注意搞，今天终于好好弄了一遍，记录一些问题。  </p>
+<p>记得在git shell中加入git remote add origin https://github.com/heifrank/heifrank.github.io.git，查看的时候可以用git remote -v来查<br />
+之前出的问题是git的submodule相关的，不太了解git具体怎么用，好像说是要用gitmodule这个文件，还有一些命令什么的，没搞清楚<br />
+其实说白了就是pelican-themes和pelican-plugins是两个子模块，之前不用指定gitmodule就能用，现在不行了，必须用gitmodule<br />
+我于是把主题和插件的位置都换成了本机的绝对路径，就没问题了，具体可以见pelicanconf.py的设置即可  </p>
+<p>开始配置的时候好像还需要git user什么的，记不清了，记下有这么个东西就好，省的以后出错了都不知道该往什么方向改。</p>
             </div><!-- /.entry-content -->
             <div class="comments">
               <h3>Comments</h3>
               <div id="disqus_thread"></div>
               <script type="text/javascript">
-                var disqus_identifier = "pages/2013/10/10/eclipse_cplusplus_windows.html";
+                var disqus_identifier = "pages/2014/03/26/blog_notice.html";
                 (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                 dsq.src = 'http://heifrank27.disqus.com/embed.js';

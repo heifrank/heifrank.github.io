@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>新世界 - Articles by heifrank</title>
+        <title>新世界 - blog</title>
         <meta charset="utf-8" />
 
 
@@ -44,7 +44,7 @@
             </div>
 
 <section id="content">
-<h2>Articles by heifrank</h2>
+
 
 
    <div class="row">
@@ -53,64 +53,24 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/07/POJ_3259.html" rel="bookmark" title="Permalink to POJ 3259">POJ 3259</a></h2> </header>
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/26/blog_notice.html" rel="bookmark" title="Permalink to 折腾博客">折腾博客</a></h2> </header>
 				                <footer class="post-info">
-				                    <abbr class="published" title="2013-10-07T00:00:00"> 2013-10-07 </abbr>
+				                    <abbr class="published" title="2014-03-26T00:00:00"> 2014-03-26 </abbr>
 <address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>题意：一个图，有两种边，一种是双向边，权值为正，一种是单向边，权值为负。<br />
-问能否在图中找到一个负环。</p>
-<p>分析：典型的找负环的题，但是这个题没有规定起点，所以直接从点1开始做bf是错误的。<br />
-bellman-ford算法可以判断一个从源点可达的环，那这个题需要做n次bf吗？<br />
-其实可以建立一个源，从源向每个图中的点引一条任意权值的边（不必为0），然后用bf就行了。<br />
-本质上就是初始化和经典的初始化不同，细节见代码。</p>
-<div class="highlight"><pre><span class="cm">/*</span>
-<span class="cm">    POJ 3259</span>
-<span class="cm">    code by heifrank</span>
-<span class="cm">*/</span>
-<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">cstdio</span><span class="o">&gt;</span>
-<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">vector</span><span class="o">&gt;</span>
-<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">cstring</span><span class="o">&gt;</span>
-<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">queue</span><span class="o">&gt;</span>
-<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span>
-<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+				                <div class="entry-content"> <p>博客出问题好久了，一直没有注意搞，今天终于好好弄了一遍，记录一些问题。  </p>
+<p>记得在git shell中加入git remote add origin https://github.com/heifrank/heifrank.github.io.git，查看的时候可以用git remote -v来查<br />
+之前出的问题是git的submodule相关的，不太了解git具体怎么用，好像说是要用gitmodule这个文件，还有一些命令什么的，没搞清楚<br />
+其实说白了就是pelican-themes和pelican-plugins是两个子模块，之前不用指定gitmodule就能用，现在不行了，必须用gitmodule<br />
+我于是把主题和插件的位置都换成了本机的绝对路径，就没问题了，具体可以见pelicanconf.py的设置即可  </p>
+<p>开始配置的时候好像还需要git user什么的，记不清了，记下有这么个东西就好，省的以后出错了都不知道该往什么方向改。</p> </div><!-- /.entry-content -->
 
-<span class="k">const</span> <span class="k">int</span> <span class="no">MV</span> <span class="o">=</span> <span class="mh">505</span><span class="p">;</span>
-
-<span class="n">vector</span><span class="o">&lt;</span> <span class="n">pair</span><span class="o">&lt;</span><span class="k">int</span><span class="p">,</span> <span class="k">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="no">G</span><span class="p">[</span><span class="no">MV</span><span class="p">];</span>
-<span class="k">int</span> <span class="n">d ...</span></pre></div> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/07/POJ_3259.html" rel="bookmark" title="Permalink to POJ 3259">Read more <i class="icon-arrow-right"></i></a></div>
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/03/26/blog_notice.html" rel="bookmark" title="Permalink to 折腾博客">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
 								<div class="row tag-row">
 										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/tu-lun.html">图论</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/poj.html">Poj</a>
-								</div>
-
-
-
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/05/new_world.html" rel="bookmark" title="Permalink to 新世界">新世界</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-10-05T00:00:00"> 2013-10-05 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <h2>恩，这个是我搭建起这个博客写的第一篇文章</h2>
-<p>希望能一直把这个博客写下去，我老婆也有一篇博客，马上要搭起来了，<br />
-和老婆一起写应该是挺开心的事情吧，<br />
-研究生的日子要好好过，多学点技术，老婆是个技术白痴，<br />
-好多东西得我帮她弄，哎，苦逼技术男，木有办法。</p> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/05/new_world.html" rel="bookmark" title="Permalink to 新世界">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/sui-bi.html">随笔</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/blog.html">blog</a>
 								</div>
 
 
@@ -163,8 +123,7 @@ bellman-ford算法可以判断一个从源点可达的环，那这个题需要�
 </div> </div><!-- /.row -->
 
 <p class="paginator">
-            <a href="http://heifrank.github.io/author/heifrank.html"><i class="icon-arrow-left"></i></a>
-    Page 2 / 2
+    Page 1 / 1
 </p>
 </section><!-- /#content -->
 
