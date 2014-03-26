@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>新世界 - Articles by heifrank</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/pygment.css" />
+
+        <script src="http://heifrank.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://heifrank.github.io">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content">
+<h2>Articles by heifrank</h2>
+
+
+   <div class="row">
+
+
+        <div class="eleven columns">
+		         <ol id="post-list">
+				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/07/POJ_3259.html" rel="bookmark" title="Permalink to POJ 3259">POJ 3259</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-10-07T00:00:00"> 2013-10-07 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>题意：一个图，有两种边，一种是双向边，权值为正，一种是单向边，权值为负。<br />
+问能否在图中找到一个负环。</p>
+<p>分析：典型的找负环的题，但是这个题没有规定起点，所以直接从点1开始做bf是错误的。<br />
+bellman-ford算法可以判断一个从源点可达的环，那这个题需要做n次bf吗？<br />
+其实可以建立一个源，从源向每个图中的点引一条任意权值的边（不必为0），然后用bf就行了。<br />
+本质上就是初始化和经典的初始化不同，细节见代码。</p>
+<div class="highlight"><pre><span class="cm">/*</span>
+<span class="cm">    POJ 3259</span>
+<span class="cm">    code by heifrank</span>
+<span class="cm">*/</span>
+<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">cstdio</span><span class="o">&gt;</span>
+<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">vector</span><span class="o">&gt;</span>
+<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">cstring</span><span class="o">&gt;</span>
+<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">queue</span><span class="o">&gt;</span>
+<span class="p">#</span><span class="k">include</span> <span class="o">&lt;</span><span class="n">algorithm</span><span class="o">&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="k">int</span> <span class="no">MV</span> <span class="o">=</span> <span class="mh">505</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span> <span class="n">pair</span><span class="o">&lt;</span><span class="k">int</span><span class="p">,</span> <span class="k">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="no">G</span><span class="p">[</span><span class="no">MV</span><span class="p">];</span>
+<span class="k">int</span> <span class="n">d ...</span></pre></div> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/07/POJ_3259.html" rel="bookmark" title="Permalink to POJ 3259">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/tu-lun.html">图论</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/poj.html">Poj</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/05/new_world.html" rel="bookmark" title="Permalink to 新世界">新世界</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-10-05T00:00:00"> 2013-10-05 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <h2>恩，这个是我搭建起这个博客写的第一篇文章</h2>
+<p>希望能一直把这个博客写下去，我老婆也有一篇博客，马上要搭起来了，<br />
+和老婆一起写应该是挺开心的事情吧，<br />
+研究生的日子要好好过，多学点技术，老婆是个技术白痴，<br />
+好多东西得我帮她弄，哎，苦逼技术男，木有办法。</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/05/new_world.html" rel="bookmark" title="Permalink to 新世界">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/sui-bi.html">随笔</a>
+								</div>
+
+
+
+				        </article></li>
+				</ol><!-- /#posts-list -->
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
+		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
+		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul>
+    <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
+    <li><a href="http://www.google.com">google</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+<p class="paginator">
+            <a href="http://heifrank.github.io/author/heifrank.html"><i class="icon-arrow-left"></i></a>
+    Page 2 / 2
+</p>
+</section><!-- /#content -->
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'heifrank27';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>windows下用eclipse开发C++</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/pygment.css" />
+
+        <script src="http://heifrank.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://heifrank.github.io">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark"
+                   title="Permalink to windows下用eclipse开发C++">windows下用eclipse开发C++</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2013-10-10T00:00:00">
+                2013-10-10
+              </abbr>
+              <address class="vcard author">
+                By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>eclipse + cdt + mingw的一些配置
+下载标准版本的eclipse（我用的是4.3.0版本的，也叫kepler），下载对应版本的CDT(8.2.0)，安装mingw，我是用mingw-get-inst-20120426.exe装的（这个版本我用的比较舒服，如果在官网上下载mingw的话，安装完可能缺少libiconv2，它是个windows运行的dll库，一般电脑上貌似没有这个库，如果没有它的话不能执行make命令），选装gcc和g++两个组件，如果按照默认路径（C:\MinGW）装可能会碰到少一点的问题。</p>
+<p>cdt有两种下载方式，可以在eclipse的help中通过install安装，也可以在网上下载，然后把下载完的压缩包解压，把里面的features文件夹和plugins文件夹复制到eclipse的根目录中，和eclipse的根目录中的features、plugins文件夹合并就行。</p>
+<p>1、头文件unresolved问题<br />
+这个可以通过在环境变量中设置PATH=MinGW\bin来解决，如果设置了这个path的话，那么eclipse会自动找mingw的一些头文件库，加入到工程中的include文件夹下面（刚创建工程的时候只有一个src目录，没有include目录）。不幸的是，有的时候可能不起作用，我的就是加入了变量，但是不管用，后来把变量删了，又重新加入了一次才管用，很奇怪。</p>
+<p>如果真的加了变量，再删除，再加入变量还是不可以找到头文件目录的话，可以用下面的方法：<br />
+在具体的工程中，加入依赖的库文件：<br />
+MinGW/include<br />
+MinGW/lib/gcc/mingw32/4.6.2/include<br />
+MinGW/lib/gcc/mingw32/4.6.2/include/c++<br />
+MinGW/lib/gcc/mingw32/4.6.2/include/c++/backward<br />
+MinGW/lib/gcc/mingw32/4.6.2/include/c++/mingw32<br />
+MinGW/lib/gcc/mingw32/4.6.2/include-fixed<br />
+在一个工程中导入这些配置后，可以export这个配置到一个xml中，这样方便以后写其他工程。</p>
+<p>另外还有一个解决办法就是在环境变量中添加这些值，需要的有<br />
+PATH=MinGW\bin（这个确定可以找到一些gcc.exe，make.exe等二进制文件，但是不确定能否找到相关的头文件库）<br />
+C_INCLUDE_PATH对应第一个路径<br />
+CPLUS_INCLUDE_PATH对应第二到第六个路径（第二个路径和第六个路径我不知道该归为哪里）<br />
+LIBRARY_PATH的=MinGW\lib（貌似不设置也可以）  </p>
+<p>2、cannot run program "g++"<br />
+这个是下载了cdt之后，装好mingw出现的问题，在命令行中我们直接gcc什么的都没问题，说明环境变量中有mingw的相关路径，但是eclipse中没有，解决办法是在eclipse安装包里的plugins目录下，有个叫org.eclipse.cdt.core.win32.x86_5.2.0.201306112328.jar的压缩包，解压这个压缩包，然后把这个jar删除掉，就可以了。注意解压的不是org.eclipse.cdt.core.win32_5.3.0.201306112328.jar!!!</p>
+<p>3、build正常，可以生成.exe，但是一执行就显示terminated xxx.exe [C/C++ Application]<br />
+这个有两个解决办法，一个是在你创建的工程中配置linker，在linker-flags中写入-static-libgcc -static-libstdc++<br />
+还有一个解决办法就是在run configurations里配置你要运行的.exe的environment，加入一组键值对path-&gt;mingw\bin<br />
+有些人可能在那个window的preferences里面设置environment，但是这个设置有时候好使有时候不好使，坑爹。</p>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "pages/2013/10/10/eclipse_cplusplus_windows.html";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://heifrank27.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
+		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
+		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul>
+    <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
+    <li><a href="http://www.google.com">google</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'heifrank27';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
+
+</body>
+</html>

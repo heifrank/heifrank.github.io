@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>设计模式学习笔记</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://heifrank.github.io/theme/pygment.css" />
+
+        <script src="http://heifrank.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://heifrank.github.io">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://heifrank.github.io/pages/2014/01/21/design_pattern.html" rel="bookmark"
+                   title="Permalink to 设计模式学习笔记">设计模式学习笔记</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2014-01-21T00:00:00">
+                2014-01-21
+              </abbr>
+              <address class="vcard author">
+                By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h2>按照最近学习的顺序记录设计模式的一些知识</h2>
+<p>我觉得设计模式要注意的主要方面有几个<br />
+a）面向接口编程！！！<br />
+b）开闭原则！！！（对修改封闭，对扩展开放）<br />
+c）设计模式很相通，有些设计模式非常相似，不需要太纠结细节，只要能设计出合适的类就OK，不用在乎具体是哪个模式  </p>
+<h2>写在前面</h2>
+<p>所有的设计模式的最终目的都是：让代码结构更加清晰（方便看你代码的人一眼就懂），当发生变动的时候，改动代码的代价最小。站在开发者的角度想，比如你用了个别人开发的库，你想在他开发的这个库基础上进行开发，那么你就得使用这个库，怎么用就是个大问题。<br />
+a）如果你用他的库，却要做一大堆的初始化，还有先后顺序要考虑，那你就很头疼；如果很简单就能用多好<br />
+b）如果你用他的库，却需要修改他的源代码，那就是个痛苦的决定：如果能直接继承或者包含个他的类多好<br />
+c）如果你用他的库，但是他的库中各个模块的耦合度太高，牵一发而动全身，那就是个不良的设计：如果代码清晰耦合度低多棒</p>
+<h3>先做个哈希表</h3>
+<p>单例模式        1<br />
+简单工厂模式  9<br />
+工厂方法模式  10<br />
+抽象工厂模式  11<br />
+原型模式        16
+建造者模式       14
+适配器模式       12<br />
+桥接模式        18<br />
+组合模式        15
+装饰模式        17<br />
+外观模式        4<br />
+享元模式        7<br />
+代理模式        19
+职责链模式  <br />
+命令模式  <br />
+解释器模式       13
+迭代器模式  <br />
+中介者模式       2<br />
+备忘录模式<br />
+观察者模式       5<br />
+状态模式<br />
+策略模式        8<br />
+模板方法模式  3<br />
+访问者模式   6  </p>
+<p>PS：这里都只是给出模式的一些介绍，和简单应用场景，如果想深入学习，建议找个感兴趣的模式对照书籍好好钻研一下并加以实战</p>
+<h3>1、单例模式</h3>
+<p>如果一个类只能存在一个实例，比如windows任务管理器，或者一个负责分发数据的中心服务器（要保证这个中心服务器的唯一性），这样的情况都需要我们用单例模式来进行设计。<br />
+类的大致结构是这样的  </p>
+<div class="highlight"><pre><span class="n">class</span> <span class="n">Singleton</span><span class="p">{</span>
+<span class="nl">private:</span>
+    <span class="n">Singleton</span> <span class="o">*</span><span class="n">ps</span><span class="p">;</span>
+    <span class="n">Singleton</span><span class="p">();</span>    
+<span class="nl">public:</span>
+    <span class="k">static</span> <span class="n">Singleton</span><span class="o">*</span> <span class="nf">getInstance</span><span class="p">(){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">ps</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+            <span class="n">ps</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Singleton</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">ps</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>需要保证的是构造函数是私有的，就是说类外部不能创建该单例类的实例（需要注意友元）。</p>
+<h3>2、中介者模式</h3>
+<p>协调多个对象之间的交互，常见的例子是界面系统，如果点击其中一个按钮时，会有很多个其他模块的连锁反应。具体举个例子：abcd四个模块，每个模块变化时，另外3个模块跟着变化，这样就要在每个模块中调用其他模块的代码，各个模块之间的耦合度非常之高，并且任何一部分代码不方便重用，这个时候可以考虑使用中介者模式。<br />
+中介者模式就是用一个中介统一管理协调各个对象的交互。</p>
+<h3>3、模板方法模式</h3>
+<p>不变流程封装到父类中，可变实现放到子类中。常见例子是去饭店吃饭，大概流程都是点餐，吃饭，买单，这个流程固定，但是吃饭这个环节可变，其他点餐和买单环节固定。可以实现一个抽象类，类中实现这个基本流程，并提供不可变环节（买单，点餐）的具体实现，然后吃饭环节由不同子类实现。比较实用</p>
+<h3>4、外观模式</h3>
+<p>在多个子系统与用户之间充当一个服务员的角色，感觉和中介者模式以及模板方法模式有类似之处。</p>
+<h3>5、观察者模式</h3>
+<p>这个模式据说是用频率很高，比较像的应用是微博这类的系统，很多个观察者（粉丝）关注一个人，当这个人有新动态的时候，会通知到所有的粉丝。</p>
+<h3>6、访问者模式</h3>
+<p>感觉用处不是很多，先不写了。</p>
+<h3>7、享元模式</h3>
+<p>用处不多，先不写。</p>
+<h3>8、策略模式</h3>
+<p>这个很基本，用处也挺多的，感觉就是里氏替换原则的典型应用，主要有三个类，一个是抽象算法类，还有一个具体算法类，还有一个环境类，用于使用算法类（其实不写环境类也没关系，只是写了之后会更方便客户操作），可以随便选择一个具体算法类，把这个类告诉环境类，然后就能用环境类调用这个算法了。</p>
+<h3>9、简单工厂模式</h3>
+<p>这个模式我觉得挺有用的，算是创建型模式里面的基础模式，客户给出创建的参数，由工厂来做判断创建哪个类型的对象，这个时候需要在工厂类中知道所有的抽象类的子类，并且要加以判断，不过在不是很大的工程里应该很好用。另外如果加了一个子类的话，工厂类必须做出修改，违反开闭原则。<br />
+另外学习到一个知识，就是对象的单一职责原则，一般来说，对象的职责有三种，对象本身的职责，使用对象的职责和创建对象的职责，一般来说三者要分开，创建对象的职责交付给工厂来完成，使用对象的职责交个另外一个类，这样可以使发生变化的时候，改动尽可能地小。</p>
+<h3>10、工厂模式</h3>
+<p>是在简单工厂上的一个扩展，简单工厂模式当要则增加一种新的产品类型的时候，要改工厂的代码，工厂模式就不需要，它把工厂类也做了个抽象化，每个工厂对应一个具体的产品类型，当需要增加新产品类型的时候，只需要新写一个类继承抽象工厂类，再写一个具体的产品类继承抽象产品类就行了。</p>
+<h3>11、抽象工厂模式</h3>
+<p>这个比工厂模式高级的地方就是可以创建一个产品族。需要理解产品等级和产品结构的概念。举个例子来说，电视机和电冰箱是两个产品，美的的电视机和海尔的电视机就是两个产品等级，美的电视机和美的电冰箱就是一个产品族。当我们买个新房子的时候，希望能创建一个产品族，就是直接就能买一个厂商出产的产品，比如美的电视机和美的电冰箱。另外不论是哪种工厂，一次至多创建一个产品结构。 </p>
+<h3>12、适配器模式</h3>
+<p>这个模式我感觉是比较有用的，当我们有个第三方库，然后希望它和我们现有的系统做适配时，可以写一个适配器，这个适配器继承我们现有系统中的某个类，然后关联一个第三方库类，调用我们的类方法时，其实是调用了第三方库方法，这样我们系统中的接口不必做修改，很方便。 </p>
+<h3>13、解释器模式</h3>
+<p>看了一下，学习成本高，应用频率低，就先放过了</p>
+<h3>14、建造者模式</h3>
+<p>这个也先放着，后续再补</p>
+<h3>15、组合模式</h3>
+<p>这个也是比较有用的一个模式，用于树形结构的组织，基本所有树形结构的设计，都可以用这个模式。  </p>
+<h3>16、原型模式</h3>
+<p>一个创建型的模式，用于拷贝本类一个对象。</p>
+<h3>17、装饰者模式</h3>
+<p>少用继承的典范，适用于添加功能之类，应该也有用</p>
+<h3>18、桥接模式</h3>
+<p>处理多维度变化，相对固定的维度设为抽象类，另外变化的维度设置为实现类。</p>
+<h3>19、代理模式</h3>
+<p>一定程度上类似适配器模式</p>
+<p>未完待续</p>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "pages/2014/01/21/design_pattern.html";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://heifrank27.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
+		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
+		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul>
+    <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
+    <li><a href="http://www.google.com">google</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'heifrank27';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
+
+</body>
+</html>
