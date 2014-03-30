@@ -53,6 +53,29 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark" title="Permalink to windows下用eclipse开发C++">windows下用eclipse开发C++</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-10-10T00:00:00"> 2013-10-10 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>eclipse + cdt + mingw的一些配置
+下载标准版本的eclipse（我用的是4.3.0版本的，也叫kepler），下载对应版本的CDT(8.2.0)，安装mingw，我是用mingw-get-inst-20120426.exe装的（这个版本我用的比较舒服，如果在官网上下载mingw的话，安装完可能缺少libiconv2，它是个windows运行的dll库，一般电脑上貌似没有这个库，如果没有它的话不能执行make命令），选装gcc和g++两个组件，如果按照默认路径（C:\MinGW）装可能会碰到少一点的问题。</p>
+<p>cdt有两种下载方式，可以在eclipse的help中通过install安装，也可以在网上下载，然后把下载完的压缩包解压，把里面的features文件夹和plugins文件夹复制到eclipse的根目录中，和eclipse的根目录中的features、plugins文件夹合并就行。</p>
+<p>1、头文件unresolved问题<br />
+这个可以通过在环境变量中设置PATH=MinGW\bin来解决，如果设置了这个path的话，那么eclipse会自动找mingw的一些头文件库，加入到工程中的include文件夹下面（刚创建工程的时候只有一个src目录，没有include目录）。不幸的是，有的时候可能不起作用，我的就是加入了变量，但是不管用，后来把变量删了，又重新加入了一次才管用 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark" title="Permalink to windows下用eclipse开发C++">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
 				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/08/POJ_1734.html" rel="bookmark" title="Permalink to POJ 1734">POJ 1734</a></h2> </header>
 				                <footer class="post-info">
 				                    <abbr class="published" title="2013-10-08T00:00:00"> 2013-10-08 </abbr>
@@ -162,22 +185,22 @@ bellman-ford算法可以判断一个从源点可达的环，那这个题需要�
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
+	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
 	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
 	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
 	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
 	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
+	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
 </ul>
 
 
