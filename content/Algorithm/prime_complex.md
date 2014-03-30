@@ -6,6 +6,7 @@ Slug: prime_complex
 
 
 典型的求素数用的是筛子的方法，最简单的程序是这样的
+
 	void getPrime(int n){
 		int mk[100005] = {0};
 		vector<int> prime;
