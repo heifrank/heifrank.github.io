@@ -53,6 +53,31 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/08/POJ_1734.html" rel="bookmark" title="Permalink to POJ 1734">POJ 1734</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-10-08T00:00:00"> 2013-10-08 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>题意：一个无向图，所有边权为正，求这个无向图中的一个权值最小的环（环的权值定义为环中所有边权值的和）。要求环的顶点数至少为3个，且图中可能存在重边。</p>
+<p>分析：这个题我最开始只有搜索的想法，后来看到了floyd的做法，才折服了，向强大的floyd致敬！
+这个题可以这么想，抛开floyd的思路，我们知道每个环中都有一个顶点标号最大的顶点（比如为k）。我们可以枚举这个顶点，枚举完这个顶点之后我们再枚举另外两个和它相邻的顶点i和j（i，j &lt; k）。如果这个时候我们知道i到j的不经过k的最短路（设为p），那么我们就可以把边i-&gt;k，k-&gt;j和路径p组合起来，成为一个环，如果这个环的权值小于当前求出的所有环里面的最小权值的话，那么就更新一下最小值，并记录路径。</p>
+<p>恩，这个思路看上去是挺好的，但是我们怎么求i到j的不经过k的最短路呢？想到了什么？floyd！
+floyd的本质是个dp，dp[k][i][j]代表i到j的中间节点（不包括i和j）都在区间[1，k]时，i到j的最短路。floyd算法的最外层循环是个从小到大枚举k的过程，当最外层刚刚进入第k次循环的时候 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/08/POJ_1734.html" rel="bookmark" title="Permalink to POJ 1734">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/poj.html">Poj</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/tu-lun.html">图论</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
 				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/07/POJ_3259.html" rel="bookmark" title="Permalink to POJ 3259">POJ 3259</a></h2> </header>
 				                <footer class="post-info">
 				                    <abbr class="published" title="2013-10-07T00:00:00"> 2013-10-07 </abbr>
@@ -137,18 +162,22 @@ bellman-ford算法可以判断一个从源点可达的环，那这个题需要�
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
 	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
 </ul>
 
 

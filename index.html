@@ -53,6 +53,40 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/28/prime_complex.html" rel="bookmark" title="Permalink to 素数筛的复杂度分析">素数筛的复杂度分析</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2014-03-28T00:00:00"> 2014-03-28 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>典型的求素数用的是筛子的方法，最简单的程序是这样的
+    void getPrime(int n){
+        int mk[100005] = {0};
+        vector<int> prime;</p>
+<div class="highlight"><pre>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mk</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="n">prime</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">+=</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">mk</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>那如果要筛出&lt;=n的质数，大概的复杂度是多少呢？<br />
+其实需要的次数为n x (1 + 1/2 + 1/3 + 1/4 + ... + 1 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/03/28/prime_complex.html" rel="bookmark" title="Permalink to 素数筛的复杂度分析">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/shu-lun.html">数论</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/su-shu.html">素数</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
 				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/26/blog_notice.html" rel="bookmark" title="Permalink to 折腾博客">折腾博客</a></h2> </header>
 				                <footer class="post-info">
 				                    <abbr class="published" title="2014-03-26T00:00:00"> 2014-03-26 </abbr>
@@ -71,6 +105,33 @@ git config --global user.email "your email"  </p>
 								<div class="row tag-row">
 										<span>Tagged as : </span>
 											<a class="danger label" href="http://heifrank.github.io/tag/blog.html">blog</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/26/data_structure.html" rel="bookmark" title="Permalink to 数据结构汇总">数据结构汇总</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2014-03-26T00:00:00"> 2014-03-26 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>总结一下接触过的常用数据结构（FIFO队列和栈就不说了，SPLAY、Treap、红黑树什么的看情况再写）  </p>
+<p>先说下STL，STL迭代器分为五种，input，output，正向，双向，随机存取。支持后面特性的迭代器一定支持前面的。  </p>
+<p>STL中，vector和deque都支持随机访问；set，map和list都只支持到双向迭代器，不支持随机存取，也就是说不能对这三个的迭代器进行+-运算（但是可以进行++，--运算，因为支持双向迭代）；stack，queue，priority_queue不支持迭代器，它们都是容器适配器。  </p>
+<h3>1、单调队列</h3>
+<p>队列内的元素是单调排列的，和普通队列的区别在于队列尾部可以弹出元素。常用于优化DP什么的，一般可以把复杂度相对高的东西优化不少。</p>
+<h3>2、树状数组</h3>
+<p>问题是：给定一个数组，支持两种操作：A.修改某个元素的值，B.查询某个区间[L,R]的所有元素的和  </p>
+<p>树状数组也叫Fenwick Tree，本质是用数的二进制进行快速计算，设置一个C数组，C ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/03/26/data_structure.html" rel="bookmark" title="Permalink to 数据结构汇总">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a>
 								</div>
 
 
@@ -105,25 +166,6 @@ c）如果你用他的库，但是他的库中各个模块的耦合度太高，�
 										<span>Tagged as : </span>
 											<a class="danger label" href="http://heifrank.github.io/tag/learning.html">learning</a>
 											<a class="danger label" href="http://heifrank.github.io/tag/design.html">design</a>
-								</div>
-
-
-
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/12/25/a_test.html" rel="bookmark" title="Permalink to 测试一下">测试一下</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-12-25T00:00:00"> 2013-12-25 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>博客好像出了点问题，测试一下</p> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/12/25/a_test.html" rel="bookmark" title="Permalink to 测试一下">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/learning.html">learning</a>
 								</div>
 
 
@@ -303,31 +345,6 @@ floyd可以用于有负权的图中，即使有负环，算法也可以检测出
 
 
 				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/08/POJ_1734.html" rel="bookmark" title="Permalink to POJ 1734">POJ 1734</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-10-08T00:00:00"> 2013-10-08 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>题意：一个无向图，所有边权为正，求这个无向图中的一个权值最小的环（环的权值定义为环中所有边权值的和）。要求环的顶点数至少为3个，且图中可能存在重边。</p>
-<p>分析：这个题我最开始只有搜索的想法，后来看到了floyd的做法，才折服了，向强大的floyd致敬！
-这个题可以这么想，抛开floyd的思路，我们知道每个环中都有一个顶点标号最大的顶点（比如为k）。我们可以枚举这个顶点，枚举完这个顶点之后我们再枚举另外两个和它相邻的顶点i和j（i，j &lt; k）。如果这个时候我们知道i到j的不经过k的最短路（设为p），那么我们就可以把边i-&gt;k，k-&gt;j和路径p组合起来，成为一个环，如果这个环的权值小于当前求出的所有环里面的最小权值的话，那么就更新一下最小值，并记录路径。</p>
-<p>恩，这个思路看上去是挺好的，但是我们怎么求i到j的不经过k的最短路呢？想到了什么？floyd！
-floyd的本质是个dp，dp[k][i][j]代表i到j的中间节点（不包括i和j）都在区间[1，k]时，i到j的最短路。floyd算法的最外层循环是个从小到大枚举k的过程，当最外层刚刚进入第k次循环的时候 ...</p> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/08/POJ_1734.html" rel="bookmark" title="Permalink to POJ 1734">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/poj.html">Poj</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/tu-lun.html">图论</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a>
-								</div>
-
-
-
-				        </article></li>
 				</ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -349,18 +366,22 @@ floyd的本质是个dp，dp[k][i][j]代表i到j的中间节点（不包括i和j�
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
 	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
 </ul>
 
 

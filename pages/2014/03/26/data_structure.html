@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>新世界</title>
+        <title>数据结构汇总</title>
         <meta charset="utf-8" />
 
 
@@ -51,30 +51,50 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="http://heifrank.github.io/pages/2013/10/05/new_world.html" rel="bookmark"
-                   title="Permalink to 新世界">新世界</a></h2>
+                <a href="http://heifrank.github.io/pages/2014/03/26/data_structure.html" rel="bookmark"
+                   title="Permalink to 数据结构汇总">数据结构汇总</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2013-10-05T00:00:00">
-                2013-10-05
+              <abbr class="published" title="2014-03-26T00:00:00">
+                2014-03-26
               </abbr>
               <address class="vcard author">
                 By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <h2>恩，这个是我搭建起这个博客写的第一篇文章</h2>
-<p>希望能一直把这个博客写下去，我老婆也有一篇博客，马上要搭起来了，<br />
-和老婆一起写应该是挺开心的事情吧，<br />
-研究生的日子要好好过，多学点技术，老婆是个技术白痴，<br />
-好多东西得我帮她弄，哎，苦逼技术男，木有办法。</p>
+              <p>总结一下接触过的常用数据结构（FIFO队列和栈就不说了，SPLAY、Treap、红黑树什么的看情况再写）  </p>
+<p>先说下STL，STL迭代器分为五种，input，output，正向，双向，随机存取。支持后面特性的迭代器一定支持前面的。  </p>
+<p>STL中，vector和deque都支持随机访问；set，map和list都只支持到双向迭代器，不支持随机存取，也就是说不能对这三个的迭代器进行+-运算（但是可以进行++，--运算，因为支持双向迭代）；stack，queue，priority_queue不支持迭代器，它们都是容器适配器。  </p>
+<h3>1、单调队列</h3>
+<p>队列内的元素是单调排列的，和普通队列的区别在于队列尾部可以弹出元素。常用于优化DP什么的，一般可以把复杂度相对高的东西优化不少。</p>
+<h3>2、树状数组</h3>
+<p>问题是：给定一个数组，支持两种操作：A.修改某个元素的值，B.查询某个区间[L,R]的所有元素的和  </p>
+<p>树状数组也叫Fenwick Tree，本质是用数的二进制进行快速计算，设置一个C数组，C[I]表示的是A[I],A[I-1],...,A[I-lowbit(I)+1]的区间的和，也就是I开始的，向前lowbit(I)个数的数字的和。求和的话就在树中往左上爬，更新的话就在树中往右上爬。需要深刻理解的是不重不漏地更新和查询所有值。  </p>
+<p>大概理解就是，查询和的时候，拿n=0101 0110这个数来说，把前n项和分解成了C[0101 0110],C[0101 0100],C[0101 0000],C[0100 0000]这几个数的和，这几个数管辖的区间完全覆盖了[1,n]区间。更新的时候，需要找到所有能管辖到这个数字的C数组中的相应元素加以更新。</p>
+<h3>3、RMQ（Range Minimum Query）</h3>
+<p>问题是：给定一个数组，频繁查询某个区间[L,R]的最小值。  </p>
+<p>一般求解RMQ都用的是ST算法（Sparse Table），是tarjan这位大师搞的，能做到O(NlogN)预处理，O(1)的查询复杂度，ST算法核心是DP，DP[I][J]代表从第i为开始的长度为1&lt;&lt;J的区间的最小值。</p>
+<h3>4、线段树</h3>
+<p>线段树是非常强大的，理解起来也不难，关键是理解透彻，如果理解不透彻的话，写代码会很坑爹。另外说一句，任何树状数组能做的东西，线段树也能做。  </p>
+<p>我理解的线段树的应用就两种，单点更新、查询，成段更新、查询。  </p>
+<p>单点：能解决很多问题，比如从左到右站一排人，每次踢出某个人右边的第k个人，问每次踢出的人的编号。<br />
+成段：这个比较麻烦，主要就是延迟标记的应用，一定要理解好这个延迟标记的作用，提炼出一句话就是：成段更新的时候并不更新到底，而是在路径最后节点上做个标记，在下一次更新或者查询的时候，如果需要继续从该节点向下走的话，把延迟标记传递下去，并且维护好本身节点的值。  </p>
+<p>线段树中，节点本身的属性越多，那么这个线段树就可以做越多的事情。比如一个数组，每次给出一个区间[L,R]，求一个它的子区间[a,b]，使得[a,b]的连续和最大。这个可以用分治的思想解决，手段就是线段树。  </p>
+<p>PS:维护好线段树节点的属性值是相当重要的！</p>
+<h3>5、set、map和hash_map</h3>
+<p>这个是STL里的东西，总结一下是很有用的。  </p>
+<p>set是一个BST，STL中用红黑树实现，根据value值进行排序，有lower_bound 和 upper_bound成员函数，可以方便查询大于等于某个value或者大于某个value的位置。  </p>
+<p>map同样是个BST，STL中用红黑树实现，它的原理是对key值进行排序，所以也是在logn的时间内完成查询和插入操作。  </p>
+<p>hash_map的查询可以做到将近O(1)的复杂度，原理是开大数量的桶，然后对key进行hash，对得到的hash值进行取模，然后放入桶当中，这样查询和更新的时候基本就是O(1)的了（只有出现冲突的时候需要继续找）</p>
+<h2>未完待续</h2>
             </div><!-- /.entry-content -->
             <div class="comments">
               <h3>Comments</h3>
               <div id="disqus_thread"></div>
               <script type="text/javascript">
-                var disqus_identifier = "pages/2013/10/05/new_world.html";
+                var disqus_identifier = "pages/2014/03/26/data_structure.html";
                 (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                 dsq.src = 'http://heifrank27.disqus.com/embed.js';

@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>新世界 - movie</title>
+        <title>新世界 - 数据结构</title>
         <meta charset="utf-8" />
 
 
@@ -53,26 +53,27 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/13/korea_movie.html" rel="bookmark" title="Permalink to 韩国电影推荐">韩国电影推荐</a></h2> </header>
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/26/data_structure.html" rel="bookmark" title="Permalink to 数据结构汇总">数据结构汇总</a></h2> </header>
 				                <footer class="post-info">
-				                    <abbr class="published" title="2013-10-13T00:00:00"> 2013-10-13 </abbr>
+				                    <abbr class="published" title="2014-03-26T00:00:00"> 2014-03-26 </abbr>
 <address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>偶是个韩国电影爱好者，不能说是电影迷吧，对电影没有那么强烈的热爱，只是喜欢而已，而且本人也不是追星族。在这里只是列出一些我印象中比较深刻的一些韩国电影，然后做一些极简短的介绍。</p>
-<p>首先声明，本人男，喜欢看一些引人深思的韩国电影，喜欢有一点暴力但不是特别血腥的电影。情感片我一般不会主动找这些影片看，但是如果碰到了还是会看一下，韩国电影表达感情很细腻，能触碰到内心深处最柔软的部分，我觉得看电影可以提高情商的，对做人处事了解世界有不少增益。以下我列出的韩国电影我强烈推荐的我都觉得非常值得看，看完之后会有很多体会和感悟，是值得细细品味的电影。每个电影的介绍比较简短，以防一些不喜欢剧透的朋友失去观看的兴趣。</p>
-<h3>1、《舞后》</h3>
-<p>这个电影非常好看啊，主角是黄政民和严正花，在剧中两人是真名出演，讲述关于亲情和梦想的故事，在我心里评分100，强烈推荐的电影。</p>
-<h3>2、《大叔》</h3>
-<p>主角叫元斌，是个帅气的小伙，在剧中被叫成大叔，电影讲述他为了救一个邻家女孩发生的一系列故事，主角的身手太帅气了，简单暴力，是我喜欢的类型，强烈推荐。</p>
-<h3>3、《假如爱有天意》</h3>
-<p>这个是我很早看的一个电影，非常感人，记得女主很漂亮，影片表达的唯美的爱情，记得我看完这个电影之后很久一段时间都不能听这个电影的主题曲，一听就会想起剧中的情节，在我心里评分100，强烈推荐 ...</p> </div><!-- /.entry-content -->
+				                <div class="entry-content"> <p>总结一下接触过的常用数据结构（FIFO队列和栈就不说了，SPLAY、Treap、红黑树什么的看情况再写）  </p>
+<p>先说下STL，STL迭代器分为五种，input，output，正向，双向，随机存取。支持后面特性的迭代器一定支持前面的。  </p>
+<p>STL中，vector和deque都支持随机访问；set，map和list都只支持到双向迭代器，不支持随机存取，也就是说不能对这三个的迭代器进行+-运算（但是可以进行++，--运算，因为支持双向迭代）；stack，queue，priority_queue不支持迭代器，它们都是容器适配器。  </p>
+<h3>1、单调队列</h3>
+<p>队列内的元素是单调排列的，和普通队列的区别在于队列尾部可以弹出元素。常用于优化DP什么的，一般可以把复杂度相对高的东西优化不少。</p>
+<h3>2、树状数组</h3>
+<p>问题是：给定一个数组，支持两种操作：A.修改某个元素的值，B.查询某个区间[L,R]的所有元素的和  </p>
+<p>树状数组也叫Fenwick Tree，本质是用数的二进制进行快速计算，设置一个C数组，C ...</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/13/korea_movie.html" rel="bookmark" title="Permalink to 韩国电影推荐">Read more <i class="icon-arrow-right"></i></a></div>
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/03/26/data_structure.html" rel="bookmark" title="Permalink to 数据结构汇总">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
 								<div class="row tag-row">
 										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/movie.html">movie</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a>
 								</div>
 
 

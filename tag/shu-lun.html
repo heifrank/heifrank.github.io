@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>新世界 - movie</title>
+        <title>新世界 - 数论</title>
         <meta charset="utf-8" />
 
 
@@ -53,26 +53,34 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/13/korea_movie.html" rel="bookmark" title="Permalink to 韩国电影推荐">韩国电影推荐</a></h2> </header>
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/28/prime_complex.html" rel="bookmark" title="Permalink to 素数筛的复杂度分析">素数筛的复杂度分析</a></h2> </header>
 				                <footer class="post-info">
-				                    <abbr class="published" title="2013-10-13T00:00:00"> 2013-10-13 </abbr>
+				                    <abbr class="published" title="2014-03-28T00:00:00"> 2014-03-28 </abbr>
 <address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>偶是个韩国电影爱好者，不能说是电影迷吧，对电影没有那么强烈的热爱，只是喜欢而已，而且本人也不是追星族。在这里只是列出一些我印象中比较深刻的一些韩国电影，然后做一些极简短的介绍。</p>
-<p>首先声明，本人男，喜欢看一些引人深思的韩国电影，喜欢有一点暴力但不是特别血腥的电影。情感片我一般不会主动找这些影片看，但是如果碰到了还是会看一下，韩国电影表达感情很细腻，能触碰到内心深处最柔软的部分，我觉得看电影可以提高情商的，对做人处事了解世界有不少增益。以下我列出的韩国电影我强烈推荐的我都觉得非常值得看，看完之后会有很多体会和感悟，是值得细细品味的电影。每个电影的介绍比较简短，以防一些不喜欢剧透的朋友失去观看的兴趣。</p>
-<h3>1、《舞后》</h3>
-<p>这个电影非常好看啊，主角是黄政民和严正花，在剧中两人是真名出演，讲述关于亲情和梦想的故事，在我心里评分100，强烈推荐的电影。</p>
-<h3>2、《大叔》</h3>
-<p>主角叫元斌，是个帅气的小伙，在剧中被叫成大叔，电影讲述他为了救一个邻家女孩发生的一系列故事，主角的身手太帅气了，简单暴力，是我喜欢的类型，强烈推荐。</p>
-<h3>3、《假如爱有天意》</h3>
-<p>这个是我很早看的一个电影，非常感人，记得女主很漂亮，影片表达的唯美的爱情，记得我看完这个电影之后很久一段时间都不能听这个电影的主题曲，一听就会想起剧中的情节，在我心里评分100，强烈推荐 ...</p> </div><!-- /.entry-content -->
+				                <div class="entry-content"> <p>典型的求素数用的是筛子的方法，最简单的程序是这样的
+    void getPrime(int n){
+        int mk[100005] = {0};
+        vector<int> prime;</p>
+<div class="highlight"><pre>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mk</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="n">prime</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">+=</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">mk</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/13/korea_movie.html" rel="bookmark" title="Permalink to 韩国电影推荐">Read more <i class="icon-arrow-right"></i></a></div>
+
+<p>那如果要筛出&lt;=n的质数，大概的复杂度是多少呢？<br />
+其实需要的次数为n x (1 + 1/2 + 1/3 + 1/4 + ... + 1 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/03/28/prime_complex.html" rel="bookmark" title="Permalink to 素数筛的复杂度分析">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
 								<div class="row tag-row">
 										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/movie.html">movie</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/shu-lun.html">数论</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/su-shu.html">素数</a>
 								</div>
 
 
