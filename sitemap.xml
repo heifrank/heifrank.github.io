@@ -5,30 +5,37 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/index.html</loc>
-<lastmod>2014-03-30T15:08:53-00:00</lastmod>
+<lastmod>2014-03-30T15:10:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/archives.html</loc>
-<lastmod>2014-03-30T15:08:53-00:00</lastmod>
+<lastmod>2014-03-30T15:10:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/tags.html</loc>
-<lastmod>2014-03-30T15:08:53-00:00</lastmod>
+<lastmod>2014-03-30T15:10:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/categories.html</loc>
-<lastmod>2014-03-30T15:08:53-00:00</lastmod>
+<lastmod>2014-03-30T15:10:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://heifrank.github.io/pages/2014/03/29/data_structure.html</loc>
+<lastmod>2014-03-29T00:00:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -40,13 +47,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/pages/2014/03/26/blog_notice.html</loc>
-<lastmod>2014-03-26T00:00:00-00:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>http://heifrank.github.io/pages/2014/03/26/data_structure.html</loc>
 <lastmod>2014-03-26T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -124,7 +124,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/category/algorithm.html</loc>
-<lastmod>2014-03-28T00:00:00-00:00</lastmod>
+<lastmod>2014-03-29T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -145,7 +145,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/tag/stldie-dai-qi.html</loc>
-<lastmod>2014-03-26T00:00:00-00:00</lastmod>
+<lastmod>2014-03-29T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -166,7 +166,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/tag/shu-ju-jie-gou.html</loc>
-<lastmod>2014-03-26T00:00:00-00:00</lastmod>
+<lastmod>2014-03-29T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -257,7 +257,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/author/heifrank.html</loc>
-<lastmod>2014-03-28T00:00:00-00:00</lastmod>
+<lastmod>2014-03-29T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
