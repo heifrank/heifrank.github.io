@@ -1,7 +1,7 @@
 Title: windows下用eclipse开发C++
 Date: 2013-10-10
 Category: Tech
-Tags: develop
+Tags: develop, eclipse
 Slug: eclipse_cplusplus_windows
 
 eclipse + cdt + mingw的一些配置

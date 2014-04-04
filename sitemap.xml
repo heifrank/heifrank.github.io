@@ -5,30 +5,37 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/index.html</loc>
-<lastmod>2014-03-30T17:18:08-00:00</lastmod>
+<lastmod>2014-04-04T16:38:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/archives.html</loc>
-<lastmod>2014-03-30T17:18:08-00:00</lastmod>
+<lastmod>2014-04-04T16:38:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/tags.html</loc>
-<lastmod>2014-03-30T17:18:08-00:00</lastmod>
+<lastmod>2014-04-04T16:38:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/categories.html</loc>
-<lastmod>2014-03-30T17:18:08-00:00</lastmod>
+<lastmod>2014-04-04T16:38:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://heifrank.github.io/pages/2014/04/04/eclipse_index.html</loc>
+<lastmod>2014-04-04T00:00:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -145,7 +152,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/category/tech.html</loc>
-<lastmod>2014-03-26T00:00:00-00:00</lastmod>
+<lastmod>2014-04-04T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -187,7 +194,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/tag/develop.html</loc>
-<lastmod>2013-10-10T00:00:00-00:00</lastmod>
+<lastmod>2014-04-04T00:00:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://heifrank.github.io/tag/eclipse.html</loc>
+<lastmod>2014-04-04T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -264,7 +278,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/author/heifrank.html</loc>
-<lastmod>2014-03-30T00:00:00-00:00</lastmod>
+<lastmod>2014-04-04T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>新世界 - 随笔</title>
+        <title>新世界 - eclipse</title>
         <meta charset="utf-8" />
 
 
@@ -53,23 +53,44 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/05/new_world.html" rel="bookmark" title="Permalink to 新世界">新世界</a></h2> </header>
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/04/04/eclipse_index.html" rel="bookmark" title="Permalink to eclipse的C++索引index">eclipse的C++索引index</a></h2> </header>
 				                <footer class="post-info">
-				                    <abbr class="published" title="2013-10-05T00:00:00"> 2013-10-05 </abbr>
+				                    <abbr class="published" title="2014-04-04T00:00:00"> 2014-04-04 </abbr>
 <address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <h2>恩，这个是我搭建起这个博客写的第一篇文章</h2>
-<p>希望能一直把这个博客写下去，我老婆也有一篇博客，马上要搭起来了，<br />
-和老婆一起写应该是挺开心的事情吧，<br />
-研究生的日子要好好过，多学点技术，老婆是个技术白痴，<br />
-好多东西得我帮她弄，哎，苦逼技术男，木有办法。</p> </div><!-- /.entry-content -->
+				                <div class="entry-content"> <p>eclipse中经常碰到一些头文件找不到的问题，就是程序能编译通过，但是编辑器上就是显式unresolved include files，这个时候，可以对工程进行配置，右键工程的property，找到C/C++ General，里面有个Paths and Symbols，在include的GNU C和GNU C++中都添加相应的头文件，如果只配置C++，那么以.c为后缀的文件就不能找到相应的头文件了，所以把两个都配上。配置好之后如果还不行，那就右键工程，点index，Rebuild就可以了。</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/05/new_world.html" rel="bookmark" title="Permalink to 新世界">Read more <i class="icon-arrow-right"></i></a></div>
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/04/04/eclipse_index.html" rel="bookmark" title="Permalink to eclipse的C++索引index">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
 								<div class="row tag-row">
 										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/sui-bi.html">随笔</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/eclipse.html">eclipse</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark" title="Permalink to windows下用eclipse开发C++">windows下用eclipse开发C++</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-10-10T00:00:00"> 2013-10-10 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>eclipse + cdt + mingw的一些配置
+下载标准版本的eclipse（我用的是4.3.0版本的，也叫kepler），下载对应版本的CDT(8.2.0)，安装mingw，我是用mingw-get-inst-20120426.exe装的（这个版本我用的比较舒服，如果在官网上下载mingw的话，安装完可能缺少libiconv2，它是个windows运行的dll库，一般电脑上貌似没有这个库，如果没有它的话不能执行make命令），选装gcc和g++两个组件，如果按照默认路径（C:\MinGW）装可能会碰到少一点的问题。</p>
+<p>cdt有两种下载方式，可以在eclipse的help中通过install安装，也可以在网上下载，然后把下载完的压缩包解压，把里面的features文件夹和plugins文件夹复制到eclipse的根目录中，和eclipse的根目录中的features、plugins文件夹合并就行。</p>
+<p>1、头文件unresolved问题<br />
+这个可以通过在环境变量中设置PATH=MinGW\bin来解决，如果设置了这个path的话，那么eclipse会自动找mingw的一些头文件库，加入到工程中的include文件夹下面（刚创建工程的时候只有一个src目录，没有include目录）。不幸的是，有的时候可能不起作用，我的就是加入了变量，但是不管用，后来把变量删了，又重新加入了一次才管用 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark" title="Permalink to windows下用eclipse开发C++">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/eclipse.html">eclipse</a>
 								</div>
 
 
