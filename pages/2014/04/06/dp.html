@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>新世界 - 素数</title>
+        <title>DP专辑</title>
         <meta charset="utf-8" />
 
 
@@ -43,51 +43,45 @@
               </ul>
             </div>
 
-<section id="content">
-
-
+<section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-		         <ol id="post-list">
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/28/prime_complex.html" rel="bookmark" title="Permalink to 素数筛的复杂度分析">素数筛的复杂度分析</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2014-03-28T00:00:00"> 2014-03-28 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>典型的求素数用的是筛子的方法，最简单的程序是这样的</p>
-<div class="highlight"><pre><span class="bp">void</span> <span class="nx">getPrime</span><span class="p">(</span><span class="nx">int</span> <span class="nb">n</span><span class="p">){</span>
-    <span class="nx">int</span> <span class="nx">mk</span><span class="err">[</span><span class="mi">100005</span><span class="cp">]</span> = {0};
-    vector<span class="nt">&lt;int&gt;</span> prime;
-
-    for(int i=2; i<span class="err">&lt;</span>=n; i++){
-        if(!mk<span class="cp">[</span><span class="nx">i</span><span class="cp">]</span>)prime.push_back(i);
-        for(int j=i+i; j<span class="err">&lt;</span>=n; j+=i)
-            mk<span class="cp">[</span><span class="nx">j</span><span class="cp">]</span> = 1;
-    }
-}
-</pre></div>
 
 
-<p>那如果要筛出&lt;=n的质数，大概的复杂度是多少呢？<br />
-其实需要的次数为n x (1 + 1/2 + 1/3 + 1/4 ...</p> </div><!-- /.entry-content -->
+            <header>
+              <h2 class="entry-title">
+                <a href="http://heifrank.github.io/pages/2014/04/06/dp.html" rel="bookmark"
+                   title="Permalink to DP专辑">DP专辑</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2014-04-06T00:00:00">
+                2014-04-06
+              </abbr>
+              <address class="vcard author">
+                By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h3>写一些关于DP的知识</h3>
+<p>1、任何的01背包，都可以把价值V和容量W互换，就是说有两种方法可以解背包，比如将n个物品放入容量为W的背包，问能获得的最大价值。可以转化为，将n个物品放入容量为V（V为所有物品的价值总和）的背包，能获得的最小价值（对应于原问题中的最小重量）是多少。所以，当某个方向的问题不可解时（比如状态太多，或者状态下标要用浮点数表示什么的）就可以将其用另一个方向做，典型的问题是hdu2955抢银行。</p>
+<p>2、有的时候我习惯用dp值为-1代表某个状态不可达，因为有些时候怕如果赋值为正负无穷的话会运算越界，但是如果设置不合法dp值为-1的话，一定要确保正常的dp值不能为-1。</p>
+<p>3、打印解路径。可以用两个一维数组打印（一个数组是dp数组，另一个是决策数组s，s[i]记录dp[j]是怎么转移来的），这个时候需要背包是恰好装满时候的背包，如果是可以不装满的背包，无法用两个一维数组来打印解路径，需要至少用一个二维数组，但是其实任何不装满的背包都可以按照装满背包的方法解，最后再检查一遍所有的合法值就行了。</p>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "pages/2014/04/06/dp.html";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://heifrank27.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/03/28/prime_complex.html" rel="bookmark" title="Permalink to 素数筛的复杂度分析">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/shu-lun.html">数论</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/su-shu.html">素数</a>
-								</div>
-
-
-
-				        </article></li>
-				</ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
         
@@ -140,10 +134,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

@@ -53,6 +53,85 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/18/POJ3169_POJ1275.html" rel="bookmark" title="Permalink to POJ3169和POJ1275的深入思考">POJ3169和POJ1275的深入思考</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-10-18T00:00:00"> 2013-10-18 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>恩，本篇文章再写一点深入的思考。忽然发现我的博客开始走找各种被人忽略的细节的路线了。今天要为大家带来的是差分约束的两个题，并且会为大家说明一下自己做这题时候的思考和网上流传的一些错误，不想让网上抄来抄去的东西误导了大家的思路。OJ数据弱，这个是真的，题目那么多，不能保证每个题测试数据的质量，所以很多错误的程序也能过，导致了大家可能把错误的思路也认为是正确的了。恩，下面开始正文。</p>
+<h3>POJ 3169</h3>
+<p>题意：n头牛站在x轴上，并且x[1]&lt;=x[2]&lt;=...&lt;=x[n]，然后给定了一些喜欢的关系和讨厌的关系，喜欢的关系是（a，b，c）代表牛a和牛b的距离不才能超过c，讨厌的关系也是（a，b，c）代表牛a和牛b的距离至少是c，然后求牛1和牛n的最大距离是多少。如果没有合法的站位，输出-1；如果牛1和牛n可以无穷远，输出-2；否则输出牛1和牛n的最大距离。</p>
+<p>这个题看上去很水的，差分约束的题，按照“最长路求最小值，最短路求最大值”的理论建图就行了。需要注意的一个细节就是，如果同时满足没有合法的站位和牛n牛1可以相距无穷远，那么按照题意应该是输出-1的 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/18/POJ3169_POJ1275.html" rel="bookmark" title="Permalink to POJ3169和POJ1275的深入思考">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/tu-lun.html">图论</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/15/shortest_path.html" rel="bookmark" title="Permalink to 最短路算法详解">最短路算法详解</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-10-15T00:00:00"> 2013-10-15 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>写个博客记录一下最短路的几种算法，尽量做最正确的解答，减少大家的疑惑，网上有好多讲的都抄来抄去，还有好多讲的都是错误的。。。</p>
+<p>熟悉的最短路算法就几种：bellman-ford，dijkstra，spfa，floyd，下面针对这几个算法具体解析一下。
+首先说明一点，就是关于负环的问题。<br />
+bellman-ford可以用于边权为负的图中，图里有负环也可以，如果有负环，算法会检测出负环。<br />
+dijkstra只能用于边权都为正的图中。<br />
+spfa是个bellman-ford的优化算法，本质是bellman-ford，所以适用性和bellman-ford一样。<br />
+floyd可以用于有负权的图中，即使有负环，算法也可以检测出来。</p>
+<p>任何题目中都要注意的有四点事项：图是有向图还是无向图、是否有负权边，是否有重边，顶点到自身的可达性。这几点非常重要，可以在我下面的讲解中体会。</p>
+<h3>1、dijkstra</h3>
+<p>这个最简单，只能在边权都为正的图中用这个算法，不论是有向图还是无向图。算法是个贪心的过程，每次拿出一个没有被标记过的距离最小的顶点，并从这个点进行扩展，也就是尝试松弛从这个点出发的每条边。为什么一定要用在正权图中呢？因为算法的过程相当于把整个图中的点一个一个加入到“处理完”集合S的过程，并且处理完集合中的点的距离一定是从源点到该点的最小距离。如果图中有负权，会导致一个进入集合中的点可能在后面的过程中距离值变得更小，算法就错了。举个例子来说：有向图 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/15/shortest_path.html" rel="bookmark" title="Permalink to 最短路算法详解">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/tu-lun.html">图论</a>
+											<a class="danger label" href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/13/korea_movie.html" rel="bookmark" title="Permalink to 韩国电影推荐">韩国电影推荐</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-10-13T00:00:00"> 2013-10-13 </abbr>
+<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>偶是个韩国电影爱好者，不能说是电影迷吧，对电影没有那么强烈的热爱，只是喜欢而已，而且本人也不是追星族。在这里只是列出一些我印象中比较深刻的一些韩国电影，然后做一些极简短的介绍。</p>
+<p>首先声明，本人男，喜欢看一些引人深思的韩国电影，喜欢有一点暴力但不是特别血腥的电影。情感片我一般不会主动找这些影片看，但是如果碰到了还是会看一下，韩国电影表达感情很细腻，能触碰到内心深处最柔软的部分，我觉得看电影可以提高情商的，对做人处事了解世界有不少增益。以下我列出的韩国电影我强烈推荐的我都觉得非常值得看，看完之后会有很多体会和感悟，是值得细细品味的电影。每个电影的介绍比较简短，以防一些不喜欢剧透的朋友失去观看的兴趣。</p>
+<h3>1、《舞后》</h3>
+<p>这个电影非常好看啊，主角是黄政民和严正花，在剧中两人是真名出演，讲述关于亲情和梦想的故事，在我心里评分100，强烈推荐的电影。</p>
+<h3>2、《大叔》</h3>
+<p>主角叫元斌，是个帅气的小伙，在剧中被叫成大叔，电影讲述他为了救一个邻家女孩发生的一系列故事，主角的身手太帅气了，简单暴力，是我喜欢的类型，强烈推荐。</p>
+<h3>3、《假如爱有天意》</h3>
+<p>这个是我很早看的一个电影，非常感人，记得女主很漂亮，影片表达的唯美的爱情，记得我看完这个电影之后很久一段时间都不能听这个电影的主题曲，一听就会想起剧中的情节，在我心里评分100，强烈推荐 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/13/korea_movie.html" rel="bookmark" title="Permalink to 韩国电影推荐">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										<span>Tagged as : </span>
+											<a class="danger label" href="http://heifrank.github.io/tag/movie.html">movie</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
 				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/11/POJ_3613.html" rel="bookmark" title="Permalink to POJ 3613">POJ 3613</a></h2> </header>
 				                <footer class="post-info">
 				                    <abbr class="published" title="2013-10-11T00:00:00"> 2013-10-11 </abbr>
@@ -210,23 +289,25 @@ bellman-ford算法可以判断一个从源点可达的环，那这个题需要�
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
 	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/eclipse.html">eclipse</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
 	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
 	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
+	    <li class="tag-2"><a href="http://heifrank.github.io/tag/dp.html">DP</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
+	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
+	    <li class="tag-2"><a href="http://heifrank.github.io/tag/eclipse.html">eclipse</a></li>
+	    <li class="tag-2"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a></li>
+	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
+	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
 </ul>
 
 

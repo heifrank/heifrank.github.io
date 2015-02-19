@@ -5,30 +5,51 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/index.html</loc>
-<lastmod>2014-04-04T16:38:34-00:00</lastmod>
+<lastmod>2015-02-19T14:22:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/archives.html</loc>
-<lastmod>2014-04-04T16:38:34-00:00</lastmod>
+<lastmod>2015-02-19T14:22:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/tags.html</loc>
-<lastmod>2014-04-04T16:38:34-00:00</lastmod>
+<lastmod>2015-02-19T14:22:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://heifrank.github.io/categories.html</loc>
-<lastmod>2014-04-04T16:38:34-00:00</lastmod>
+<lastmod>2015-02-19T14:22:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://heifrank.github.io/pages/2015/02/19/poj_1509.html</loc>
+<lastmod>2015-02-19T00:00:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://heifrank.github.io/pages/2014/10/31/srm_208.html</loc>
+<lastmod>2014-10-31T00:00:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://heifrank.github.io/pages/2014/04/06/dp.html</loc>
+<lastmod>2014-04-06T00:00:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -138,7 +159,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/category/algorithm.html</loc>
-<lastmod>2014-03-29T00:00:00-00:00</lastmod>
+<lastmod>2015-02-19T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -270,6 +291,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://heifrank.github.io/tag/zi-fu-chuan.html</loc>
+<lastmod>2015-02-19T00:00:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://heifrank.github.io/tag/dp.html</loc>
+<lastmod>2014-10-31T00:00:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://heifrank.github.io/tag/socket.html</loc>
 <lastmod>2013-11-11T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
@@ -278,7 +313,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://heifrank.github.io/author/heifrank.html</loc>
-<lastmod>2014-04-04T00:00:00-00:00</lastmod>
+<lastmod>2015-02-19T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
