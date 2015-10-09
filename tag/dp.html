@@ -18,8 +18,6 @@
 
 
 
-
-
 </head>
 
 <body id="index" class="home">
@@ -30,14 +28,14 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+                  <h1><a href="http://heifrank.github.io/">新世界 <strong></strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://heifrank.github.io">Home</a></li>
+                <li><a href="http://heifrank.github.io/">Home</a></li>
 
 
               </ul>
@@ -51,51 +49,57 @@
 
 
         <div class="eleven columns">
-		         <ol id="post-list">
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/10/31/srm_208.html" rel="bookmark" title="Permalink to SRM 208">SRM 208</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2014-10-31T00:00:00"> 2014-10-31 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>SRM 208 DIV1 的level 3，题意是给一个张网，每个给子里有一定量的苹果，求然后有三个人从左上角走到右下角，每个人走过一个格子的时候就会把当前格子里的苹果都带走，问三个人能拿到的最多的苹果是多少。</p>
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/10/31/srm_208.html" rel="bookmark" title="Permalink to SRM 208">SRM 208</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-10-31T00:00:00+08:00"> 2014-10-31 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>SRM 208 DIV1 的level 3，题意是给一个张网，每个给子里有一定量的苹果，求然后有三个人从左上角走到右下角，每个人走过一个格子的时候就会把当前格子里的苹果都带走，问三个人能拿到的最多的苹果是多少。</p>
 <p>很显然的一个解法dp，dp[step][i][j][k]，意义是走完step步，第一个人在(i,step-i)，第二个人在(j,step-j)，第三人在(k,step-k)的时候能拿到的最多苹果是多少。</p>
 <p>这题还有另一种解法，是要观察出一个性质，就是三条路径除了第一行和最后一行，路径不会相交，就是说可以理解成从第一行连到最后一行的三条路，路径不相交，相交肯定不是最优的，这个比较容易证明。然后是dp的时候怎么能体现出这个三条路径不相交的性质来。dp[row][i][j][k]为第row行，当前三条路径终点在(row,i)，(row,j)，(row,k)三个点时能拿到的最多苹果 ...</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/10/31/srm_208.html" rel="bookmark" title="Permalink to SRM 208">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/10/31/srm_208.html" rel="bookmark" title="Permalink to SRM 208">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/dp.html">DP</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/dp.html">DP</a>
+                                </div>
 
 
 
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/04/06/dp.html" rel="bookmark" title="Permalink to DP专辑">DP专辑</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2014-04-06T00:00:00"> 2014-04-06 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <h3>写一些关于DP的知识</h3>
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/04/06/dp.html" rel="bookmark" title="Permalink to DP专辑">DP专辑</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-04-06T00:00:00+08:00"> 2014-04-06 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h3>写一些关于DP的知识</h3>
 <p>1、任何的01背包，都可以把价值V和容量W互换，就是说有两种方法可以解背包，比如将n个物品放入容量为W的背包，问能获得的最大价值。可以转化为，将n个物品放入容量为V（V为所有物品的价值总和）的背包，能获得的最小价值（对应于原问题中的最小重量）是多少。所以，当某个方向的问题不可解时（比如状态太多，或者状态下标要用浮点数表示什么的）就可以将其用另一个方向做，典型的问题是hdu2955抢银行。</p>
 <p>2、有的时候我习惯用dp值为-1代表某个状态不可达，因为有些时候怕如果赋值为正负无穷的话会运算越界，但是如果设置不合法dp值为-1的话，一定要确保正常的dp值不能为-1。</p>
 <p>3、打印解路径。可以用两个一维数组打印（一个数组是dp数组，另一个是决策数组s，s[i]记录dp[j]是怎么转移来的），这个时候需要背包是恰好装满时候的背包，如果是可以不装满的背包，无法用两个一维数组来打印解路径，需要至少用一个二维数组，但是其实任何不装满的背包都可以按照装满背包的方法解，最后再检查一遍所有的合法值就行了。</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/04/06/dp.html" rel="bookmark" title="Permalink to DP专辑">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/04/06/dp.html" rel="bookmark" title="Permalink to DP专辑">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/dp.html">DP</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/dp.html">DP</a>
+                                </div>
 
 
 
-				        </article></li>
-				</ol><!-- /#posts-list -->
+                        </article></li>
+                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
         
@@ -107,7 +111,7 @@
   </ul>
 
 <h4>Categories</h4>
-<ul>
+<ul class="blank">
 		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
 		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
 		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
@@ -115,32 +119,13 @@
 
 
 <h4>Tags</h4>
-	<ul>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/dp.html">DP</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/eclipse.html">eclipse</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	<ul class="blank">
 </ul>
 
 
 <nav class="widget">
   <h4>Social</h4>
-  <ul>
+  <ul class="blank">
     <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
     <li><a href="http://www.google.com">google</a></li>
   </ul>
@@ -200,6 +185,5 @@
   <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
-
 </body>
 </html>

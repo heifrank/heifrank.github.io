@@ -18,8 +18,6 @@
 
 
 
-
-
 </head>
 
 <body id="index" class="home">
@@ -30,14 +28,14 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+                  <h1><a href="http://heifrank.github.io/">新世界 <strong></strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://heifrank.github.io">Home</a></li>
+                <li><a href="http://heifrank.github.io/">Home</a></li>
 
 
               </ul>
@@ -56,11 +54,11 @@
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2013-11-11T00:00:00">
+              <abbr class="published" title="2013-11-11T00:00:00+08:00">
                 2013-11-11
               </abbr>
-              <address class="vcard author">
-                By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a>
+              <address class="vcard author">By 
+                <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
@@ -68,65 +66,65 @@
 <h2>一、面向连接的编程TCP</h2>
 <h4>1、服务器端：</h4>
 <p>首先建立socket</p>
-<div class="highlight"><pre><span class="n">sockfd</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight"><pre>sockfd = socket(AF_INET, SOCK_STREAM, 0)
 </pre></div>
 
 
 <p>第二个参数说明是面向连接的编程，如果返回-1代表出错，否则返回socket描述符的值；<br />
 然后本机配置一个sockaddr_in类型的地址</p>
-<div class="highlight"><pre><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>  
-<span class="n">myaddr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="n">SERVER_PORT</span><span class="p">);</span>  
-<span class="n">myaddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">INADDR_ANY</span><span class="p">;</span><span class="c1">//这个值代表自动为这个字段填入本机的IP地址  </span>
-<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_zero</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_zero</span><span class="p">));</span>
+<div class="highlight"><pre>myaddr.sin_family = AF_INET;  
+myaddr.sin_port = htons(SERVER_PORT);  
+myaddr.sin_addr.s_addr = INADDR_ANY;//这个值代表自动为这个字段填入本机的IP地址  
+memset(&amp;myaddr.sin_zero, 0, sizeof(myaddr.sin_zero));
 </pre></div>
 
 
 <p>接下来要将socket和配置的地址绑定</p>
-<div class="highlight"><pre><span class="n">bind</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">myaddr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span><span class="p">))</span>
+<div class="highlight"><pre>bind(sockfd, (struct sockaddr *)&amp;myaddr, sizeof(struct sockaddr))
 </pre></div>
 
 
 <p>如果返回值为-1代表出错；<br />
 接下来设置同时接收请求的最大数量</p>
-<div class="highlight"><pre><span class="n">listen</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="n">NUM</span><span class="p">)</span>
+<div class="highlight"><pre>listen(sockfd, NUM)
 </pre></div>
 
 
 <p>NUM代表最大的同时请求的数量，这个函数在tcp连接中才有用。<br />
 之后就一直监听sockfd，用accpet函数</p>
-<div class="highlight"><pre><span class="n">client_fd</span> <span class="o">=</span> <span class="n">accept</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">client_addr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">)</span>
+<div class="highlight"><pre>client_fd = accept(sockfd, (struct sockaddr *)&amp;client_addr, &amp;size)
 </pre></div>
 
 
 <p>这里的参数意义是，sockfd代表作为服务的socket，第二个参数是代表向服务端发送请求的客户端的地址信息，第三个是一个指向的内容为sizeof(sockaddr_in)的指针，也就是说需要在调用这个函数之前设置size=sizeof(sockaddr_in)，返回值是一个新的socket描述符，就是说accept函数接收了远方客户端的请求，然后把客户端的地址放在了client_addr里，之后为客户端创建了一个新的socket，以后服务器就可以通过这个client_fd来和客户端收发数据了。</p>
 <h4>2、客户端：</h4>
 <p>客户端不需要bind函数，因为客户端很多情况下不需要知道自己用的是哪个端口和服务器通信；客户端也要建立socket，也要配置sockaddr_in类型的地址，这个地址里存放的是远方服务器的地址信息，然后调用connect来进行和服务器的TCP连接，connect函数会自动为客户端分配可用的端口来和服务器通信</p>
-<div class="highlight"><pre><span class="kt">int</span> <span class="n">connect</span><span class="p">(</span><span class="kt">int</span> <span class="n">sockfd</span><span class="p">,</span> <span class="k">struct</span> <span class="n">sockaddr</span><span class="o">*</span> <span class="n">server_addr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">addrlen</span><span class="p">)</span>
+<div class="highlight"><pre>int connect(int sockfd, struct sockaddr* server_addr, int addrlen)
 </pre></div>
 
 
 <p>其中sockfd就是客户端创建的文件描述符，server_addr就是要填写的远端服务器的信息，addrlen一般设置为sizeof(struct sockaddr)</p>
 <h4>3、收发数据：</h4>
 <p>面向连接的收发数据函数为send和recv</p>
-<div class="highlight"><pre><span class="kt">int</span> <span class="n">send</span><span class="p">(</span><span class="kt">int</span> <span class="n">sockfd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">msg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">)</span>
+<div class="highlight"><pre>int send(int sockfd, const void* msg, int len, int flags)
 </pre></div>
 
 
 <p>sockfd是用来传输数据的socket描述符，msg是一个指向要发送的数据的指针，len是以字节为单位的要发送的数据的长度，flags一般设置为0
 返回值是实际发送的数据的长度，如果这个长度和len不相等的话，需要自己处理一下</p>
-<div class="highlight"><pre><span class="kt">int</span> <span class="n">recv</span><span class="p">(</span><span class="kt">int</span> <span class="n">sockfd</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">)</span>
+<div class="highlight"><pre>int recv(int sockfd, void *buf, int len, unsigned int flags)
 </pre></div>
 
 
 <p>sockfd是用来接收数据的socket描述符，buf是用来存放接收数据的缓冲区，len是缓冲区的长度（如果定义buf[SIZE]，那么len就为SIZE）,flags一般也设置为0，recv返回实际接收的字节数，如果返回-1说明接收错误。</p>
 <h2>二、面向无连接的编程UDP</h2>
 <p>大致情况和上面相同，不过有几个函数不需要，一个是connect，一个是accept，还有一个是listen。客户端建立完socket，配置好服务器地址之后，直接调用sendto或者recvfrom函数就可以和服务器交互数据了（相比tcp连接少了connect的过程）。服务器创建完socket，绑定端口之后就也可以调用sendto和recvfrom来和客户端交互数据（相比tcp连接少了listen的过程，同时也少了和connect相对应的accept过程）。</p>
-<div class="highlight"><pre><span class="kt">int</span> <span class="n">sendto</span><span class="p">(</span><span class="kt">int</span> <span class="n">sockfd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">msg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">sockaddr</span><span class="o">*</span> <span class="n">to</span><span class="p">,</span> <span class="kt">int</span> <span class="n">tolen</span><span class="p">)</span>
+<div class="highlight"><pre>int sendto(int sockfd, const void *msg, int len, unsigned int flags, const struct sockaddr* to, int tolen)
 </pre></div>
 
 
 <p>前面四个参数和send的含义一致，to需要填写远端地址，tolen一般设置为sizeof(struct sockaddr)</p>
-<div class="highlight"><pre><span class="kt">int</span> <span class="n">recvfrom</span><span class="p">(</span><span class="kt">int</span> <span class="n">sockfd</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">,</span> <span class="k">struct</span> <span class="n">sockaddr</span><span class="o">*</span> <span class="n">from</span> <span class="p">,</span> <span class="kt">socklen_t</span> <span class="o">*</span><span class="n">fromlen</span><span class="p">)</span>
+<div class="highlight"><pre>int recvfrom(int sockfd, void *buf, int len, unsigned int flags, struct sockaddr* from , socklen_t *fromlen)
 </pre></div>
 
 
@@ -149,7 +147,7 @@
 
 
         </div><!-- /.eleven.columns -->
-        
+
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -158,7 +156,7 @@
   </ul>
 
 <h4>Categories</h4>
-<ul>
+<ul class="blank">
 		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
 		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
 		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
@@ -166,32 +164,13 @@
 
 
 <h4>Tags</h4>
-	<ul>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/dp.html">DP</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/eclipse.html">eclipse</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	<ul class="blank">
 </ul>
 
 
 <nav class="widget">
   <h4>Social</h4>
-  <ul>
+  <ul class="blank">
     <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
     <li><a href="http://www.google.com">google</a></li>
   </ul>
@@ -249,6 +228,5 @@
   <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
-
 </body>
 </html>

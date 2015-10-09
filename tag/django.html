@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>字符串最小表示</title>
+        <title>新世界 - django</title>
         <meta charset="utf-8" />
 
 
@@ -41,68 +41,63 @@
               </ul>
             </div>
 
-<section id="content" class="body">
+<section id="content">
+
+
 
    <div class="row">
+
+
         <div class="eleven columns">
-
-
-            <header>
-              <h2 class="entry-title">
-                <a href="http://heifrank.github.io/pages/2015/02/19/poj_1509.html" rel="bookmark"
-                   title="Permalink to 字符串最小表示">字符串最小表示</a></h2>
-           
-            </header>
-            <footer class="post-info">
-              <abbr class="published" title="2015-02-19T00:00:00+08:00">
-                2015-02-19
-              </abbr>
-              <address class="vcard author">By 
-                <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
-              </address>
-            </footer><!-- /.post-info -->
-            <div class="entry-content">
-              <h2>字符串最小表示</h2>
-<p>这个是求字符串循环之后的最小串：把字符串先复制一份放到原串末尾，然后对两个串相互比较，这里先比较i=0和j=1这两个串，如果出现了字符不相等的情况，需要选择i和j其中一个改变其值，改多少呢？</p>
-<p>如果a[i+k] &gt; a[j+k]，那么把i变成i+k+1即可，为什么呢？为什么i不可能是i到i+k中的值呢？因为无论i取i到i+k中的任何值（假设为i+m），那么我们都可以找到另一个串a[j+m]比a[i+m]要小（因为a[j+k] &lt; a[i+k]），因此i如果变成i+m的话，其实不是最优的。</p>
-<p>贴下关键部分的代码</p>
-<div class="highlight"><pre>int go(){
-    int i = 0, j = 1, k = 0;
-    int sz = strlen(a);
-    for(int m = 0; m &lt; sz; m++)
-        a[m + sz] = a[m];
-    while(i &lt; sz &amp;&amp; j &lt; sz &amp;&amp; k &lt; sz){
-        if(a[i + k] == a[j + k])k++;
-        else{
-            if(a[i + k] &gt; a[j + k]){
-                i = i + k + 1;
-            }else{
-                j = j + k + 1;
-            }
-            k = 0;
-            if(i == j)j = i + 1;
-        }
-    }
-    return min(i, j) + 1;
-}
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2015/10/07/django_app_1.html" rel="bookmark" title="Permalink to django制作first app(1)">django制作first app(1)</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2015-10-07T00:00:00+08:00"> 2015-10-07 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>django中的migrate有三种：
+1、makemigrate
+2、sqlmigrate
+3、migrate</p>
+<p>makemigrate，基于当前的model，根据对models的修改，创建新的迁移文件
+sqlmigrate，用于显示迁移的SQL语句
+migrate，是真正用于执行迁移操作的命令</p>
+<p>一般用法是修改models之后，以如下命令顺序执行</p>
+<div class="highlight"><pre>python manage.py makemigrate
+python manage.py sqlmigrate appname 0001
+python manage.py migrate
 </pre></div>
-            </div><!-- /.entry-content -->
-            <div class="comments">
-              <h3>Comments</h3>
-              <div id="disqus_thread"></div>
-              <script type="text/javascript">
-                var disqus_identifier = "pages/2015/02/19/poj_1509.html";
-                (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://heifrank27.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-              </script>
-            </div>
 
+
+<p>一些简单的查询语句都可以通过对python的对象的操作来实现，比如</p>
+<div class="highlight"><pre>Question.objects.filter(id=1)
+Question.objects.all()
+Question.objects.get(pk=1)
+
+# Question是Choice的外键
+q = Question.objects ...</pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2015/10/07/django_app_1.html" rel="bookmark" title="Permalink to django制作first app(1)">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/django.html">django</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/migrate.html">migrate</a>
+                                </div>
+
+
+
+                        </article></li>
+                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
-
+        
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -133,8 +128,10 @@
 
 </div> </div><!-- /.row -->
 
-
-</section>
+<p class="paginator">
+    Page 1 / 1
+</p>
+</section><!-- /#content -->
 
        </div><!-- /.row -->
     </div><!-- /.container -->

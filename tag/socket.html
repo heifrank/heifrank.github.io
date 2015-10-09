@@ -18,8 +18,6 @@
 
 
 
-
-
 </head>
 
 <body id="index" class="home">
@@ -30,14 +28,14 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+                  <h1><a href="http://heifrank.github.io/">新世界 <strong></strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://heifrank.github.io">Home</a></li>
+                <li><a href="http://heifrank.github.io/">Home</a></li>
 
 
               </ul>
@@ -51,56 +49,59 @@
 
 
         <div class="eleven columns">
-		         <ol id="post-list">
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/11/11/socket_basic.html" rel="bookmark" title="Permalink to socket基本用法">socket基本用法</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-11-11T00:00:00"> 2013-11-11 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>写个文章记录一下基本的socket的使用</p>
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/11/11/socket_basic.html" rel="bookmark" title="Permalink to socket基本用法">socket基本用法</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2013-11-11T00:00:00+08:00"> 2013-11-11 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>写个文章记录一下基本的socket的使用</p>
 <h2>一、面向连接的编程TCP</h2>
 <h4>1、服务器端：</h4>
 <p>首先建立socket</p>
-<div class="highlight"><pre><span class="n">sockfd</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight"><pre>sockfd = socket(AF_INET, SOCK_STREAM, 0)
 </pre></div>
 
 
 <p>第二个参数说明是面向连接的编程，如果返回-1代表出错，否则返回socket描述符的值；<br />
 然后本机配置一个sockaddr_in类型的地址</p>
-<div class="highlight"><pre><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>  
-<span class="n">myaddr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="n">SERVER_PORT</span><span class="p">);</span>  
-<span class="n">myaddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">INADDR_ANY</span><span class="p">;</span><span class="c1">//这个值代表自动为这个字段填入本机的IP地址  </span>
-<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_zero</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_zero</span><span class="p">));</span>
+<div class="highlight"><pre>myaddr.sin_family = AF_INET;  
+myaddr.sin_port = htons(SERVER_PORT);  
+myaddr.sin_addr.s_addr = INADDR_ANY;//这个值代表自动为这个字段填入本机的IP地址  
+memset(&amp;myaddr.sin_zero, 0, sizeof(myaddr.sin_zero));
 </pre></div>
 
 
 <p>接下来要将socket和配置的地址绑定</p>
-<div class="highlight"><pre><span class="n">bind</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">myaddr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span><span class="p">))</span>
+<div class="highlight"><pre>bind(sockfd, (struct sockaddr *)&amp;myaddr, sizeof(struct sockaddr))
 </pre></div>
 
 
 <p>如果返回值为-1代表出错；<br />
 接下来设置同时接收请求的最大数量</p>
-<div class="highlight"><pre><span class="n">listen</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="n">NUM</span><span class="p">)</span>
+<div class="highlight"><pre>listen(sockfd, NUM)
 </pre></div>
 
 
 <p>NUM代表最大的同时请求的数量，这个函数在tcp连接中才有用 ...</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/11/11/socket_basic.html" rel="bookmark" title="Permalink to socket基本用法">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/11/11/socket_basic.html" rel="bookmark" title="Permalink to socket基本用法">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/learning.html">learning</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/socket.html">socket</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/learning.html">learning</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/socket.html">socket</a>
+                                </div>
 
 
 
-				        </article></li>
-				</ol><!-- /#posts-list -->
+                        </article></li>
+                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
         
@@ -112,7 +113,7 @@
   </ul>
 
 <h4>Categories</h4>
-<ul>
+<ul class="blank">
 		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
 		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
 		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
@@ -120,32 +121,13 @@
 
 
 <h4>Tags</h4>
-	<ul>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/dp.html">DP</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/eclipse.html">eclipse</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	<ul class="blank">
 </ul>
 
 
 <nav class="widget">
   <h4>Social</h4>
-  <ul>
+  <ul class="blank">
     <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
     <li><a href="http://www.google.com">google</a></li>
   </ul>
@@ -205,6 +187,5 @@
   <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
-
 </body>
 </html>

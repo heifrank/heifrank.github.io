@@ -18,8 +18,6 @@
 
 
 
-
-
 </head>
 
 <body id="index" class="home">
@@ -30,14 +28,14 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+                  <h1><a href="http://heifrank.github.io/">新世界 <strong></strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://heifrank.github.io">Home</a></li>
+                <li><a href="http://heifrank.github.io/">Home</a></li>
 
 
               </ul>
@@ -51,32 +49,35 @@
 
 
         <div class="eleven columns">
-		         <ol id="post-list">
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2015/02/19/poj_1509.html" rel="bookmark" title="Permalink to 字符串最小表示">字符串最小表示</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2015-02-19T00:00:00"> 2015-02-19 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <h2>字符串最小表示</h2>
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2015/02/19/poj_1509.html" rel="bookmark" title="Permalink to 字符串最小表示">字符串最小表示</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2015-02-19T00:00:00+08:00"> 2015-02-19 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>字符串最小表示</h2>
 <p>这个是求字符串循环之后的最小串：把字符串先复制一份放到原串末尾，然后对两个串相互比较，这里先比较i=0和j=1这两个串，如果出现了字符不相等的情况，需要选择i和j其中一个改变其值，改多少呢？</p>
 <p>如果a[i+k] &gt; a[j+k]，那么把i变成i+k+1即可，为什么呢？为什么i不可能是i到i+k中的值呢？因为无论i取i到i+k中的任何值（假设为i+m），那么我们都可以找到另一个串a[j+m]比a[i+m]要小（因为a[j+k] &lt; a[i+k]），因此i如果变成i+m的话，其实不是最优的。</p>
 <p>贴下关键部分的代码</p>
-<div class="highlight"><pre><span class="kt">int</span> <span class="nf">go</span><span class="p">(){</span>
-    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1 ...</span></pre></div> </div><!-- /.entry-content -->
+<div class="highlight"><pre>int go(){
+    int i = 0, j = 1 ...</pre></div> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2015/02/19/poj_1509.html" rel="bookmark" title="Permalink to 字符串最小表示">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a>
-								</div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2015/02/19/poj_1509.html" rel="bookmark" title="Permalink to 字符串最小表示">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-				        </article></li>
-				</ol><!-- /#posts-list -->
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a>
+                                </div>
+
+
+
+                        </article></li>
+                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
         
@@ -88,7 +89,7 @@
   </ul>
 
 <h4>Categories</h4>
-<ul>
+<ul class="blank">
 		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
 		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
 		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
@@ -96,32 +97,13 @@
 
 
 <h4>Tags</h4>
-	<ul>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/dp.html">DP</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/eclipse.html">eclipse</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	<ul class="blank">
 </ul>
 
 
 <nav class="widget">
   <h4>Social</h4>
-  <ul>
+  <ul class="blank">
     <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
     <li><a href="http://www.google.com">google</a></li>
   </ul>
@@ -181,6 +163,5 @@
   <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
-
 </body>
 </html>

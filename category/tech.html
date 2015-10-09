@@ -18,8 +18,6 @@
 
 
 
-
-
 </head>
 
 <body id="index" class="home">
@@ -30,14 +28,14 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+                  <h1><a href="http://heifrank.github.io/">新世界 <strong></strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://heifrank.github.io">Home</a></li>
+                <li><a href="http://heifrank.github.io/">Home</a></li>
 
 
               </ul>
@@ -51,57 +49,110 @@
 
 
         <div class="eleven columns">
-		         <ol id="post-list">
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/04/04/eclipse_index.html" rel="bookmark" title="Permalink to eclipse的C++索引index">eclipse的C++索引index</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2014-04-04T00:00:00"> 2014-04-04 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>eclipse中经常碰到一些头文件找不到的问题，就是程序能编译通过，但是编辑器上就是显式unresolved include files，这个时候，可以对工程进行配置，右键工程的property，找到C/C++ General，里面有个Paths and Symbols，在include的GNU C和GNU C++中都添加相应的头文件，如果只配置C++，那么以.c为后缀的文件就不能找到相应的头文件了，所以把两个都配上。配置好之后如果还不行，那就右键工程，点index，Rebuild就可以了。</p> </div><!-- /.entry-content -->
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2015/10/07/django_app_1.html" rel="bookmark" title="Permalink to django制作first app(1)">django制作first app(1)</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2015-10-07T00:00:00+08:00"> 2015-10-07 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>django中的migrate有三种：
+1、makemigrate
+2、sqlmigrate
+3、migrate</p>
+<p>makemigrate，基于当前的model，根据对models的修改，创建新的迁移文件
+sqlmigrate，用于显示迁移的SQL语句
+migrate，是真正用于执行迁移操作的命令</p>
+<p>一般用法是修改models之后，以如下命令顺序执行</p>
+<div class="highlight"><pre>python manage.py makemigrate
+python manage.py sqlmigrate appname 0001
+python manage.py migrate
+</pre></div>
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/04/04/eclipse_index.html" rel="bookmark" title="Permalink to eclipse的C++索引index">Read more <i class="icon-arrow-right"></i></a></div>
+
+<p>一些简单的查询语句都可以通过对python的对象的操作来实现，比如</p>
+<div class="highlight"><pre>Question.objects.filter(id=1)
+Question.objects.all()
+Question.objects.get(pk=1)
+
+# Question是Choice的外键
+q = Question.objects ...</pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2015/10/07/django_app_1.html" rel="bookmark" title="Permalink to django制作first app(1)">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/eclipse.html">eclipse</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/django.html">django</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/migrate.html">migrate</a>
+                                </div>
 
 
 
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/26/blog_notice.html" rel="bookmark" title="Permalink to 折腾博客">折腾博客</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2014-03-26T00:00:00"> 2014-03-26 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>博客出问题好久了，一直没有注意搞，今天终于好好弄了一遍，记录一些问题。  </p>
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/04/04/eclipse_index.html" rel="bookmark" title="Permalink to eclipse的C++索引index">eclipse的C++索引index</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-04-04T00:00:00+08:00"> 2014-04-04 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>eclipse中经常碰到一些头文件找不到的问题，就是程序能编译通过，但是编辑器上就是显式unresolved include files，这个时候，可以对工程进行配置，右键工程的property，找到C/C++ General，里面有个Paths and Symbols，在include的GNU C和GNU C++中都添加相应的头文件，如果只配置C++，那么以.c为后缀的文件就不能找到相应的头文件了，所以把两个都配上。配置好之后如果还不行，那就右键工程，点index，Rebuild就可以了。</p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/04/04/eclipse_index.html" rel="bookmark" title="Permalink to eclipse的C++索引index">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/eclipse.html">eclipse</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/03/26/blog_notice.html" rel="bookmark" title="Permalink to 折腾博客">折腾博客</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-03-26T00:00:00+08:00"> 2014-03-26 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>博客出问题好久了，一直没有注意搞，今天终于好好弄了一遍，记录一些问题。  </p>
 <p>记得在git shell中加入git remote add origin https://github.com/heifrank/heifrank.github.io.git，查看的时候可以用git remote -v来查。之前出的问题是git的submodule相关的，不太了解git具体怎么用，好像说是要用gitmodule这个文件，还有一些命令什么的，没搞清楚，其实说白了就是pelican-themes和pelican-plugins是两个子模块，之前不用指定gitmodule就能用，现在不行了，必须用gitmodule。我于是把主题和插件的位置都换成了本机的绝对路径，就没问题了，具体可以见pelicanconf.py的设置即可。  </p>
 <p>开始配置的时候好像还需要git user什么的<br />
 git config --global user.name "your name"<br />
 git config --global user.email "your email"  </p>
 <p>还有一些命令比如git ...</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/03/26/blog_notice.html" rel="bookmark" title="Permalink to 折腾博客">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/03/26/blog_notice.html" rel="bookmark" title="Permalink to 折腾博客">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/blog.html">blog</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/blog.html">blog</a>
+                                </div>
 
 
 
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/01/21/design_pattern.html" rel="bookmark" title="Permalink to 设计模式学习笔记">设计模式学习笔记</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2014-01-21T00:00:00"> 2014-01-21 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <h2>按照最近学习的顺序记录设计模式的一些知识</h2>
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2014/01/21/design_pattern.html" rel="bookmark" title="Permalink to 设计模式学习笔记">设计模式学习笔记</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-01-21T00:00:00+08:00"> 2014-01-21 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h2>按照最近学习的顺序记录设计模式的一些知识</h2>
 <p>我觉得设计模式要注意的主要方面有几个<br />
 a）面向接口编程！！！<br />
 b）开闭原则！！！（对修改封闭，对扩展开放）<br />
@@ -117,92 +168,98 @@ c）如果你用他的库，但是他的库中各个模块的耦合度太高，�
 工厂方法模式  10<br />
 抽象工厂模式 ...</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/01/21/design_pattern.html" rel="bookmark" title="Permalink to 设计模式学习笔记">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2014/01/21/design_pattern.html" rel="bookmark" title="Permalink to 设计模式学习笔记">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/learning.html">learning</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/design.html">design</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/learning.html">learning</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/design.html">design</a>
+                                </div>
 
 
 
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/11/11/socket_basic.html" rel="bookmark" title="Permalink to socket基本用法">socket基本用法</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-11-11T00:00:00"> 2013-11-11 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>写个文章记录一下基本的socket的使用</p>
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/11/11/socket_basic.html" rel="bookmark" title="Permalink to socket基本用法">socket基本用法</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2013-11-11T00:00:00+08:00"> 2013-11-11 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>写个文章记录一下基本的socket的使用</p>
 <h2>一、面向连接的编程TCP</h2>
 <h4>1、服务器端：</h4>
 <p>首先建立socket</p>
-<div class="highlight"><pre><span class="n">sockfd</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight"><pre>sockfd = socket(AF_INET, SOCK_STREAM, 0)
 </pre></div>
 
 
 <p>第二个参数说明是面向连接的编程，如果返回-1代表出错，否则返回socket描述符的值；<br />
 然后本机配置一个sockaddr_in类型的地址</p>
-<div class="highlight"><pre><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>  
-<span class="n">myaddr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="n">SERVER_PORT</span><span class="p">);</span>  
-<span class="n">myaddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">INADDR_ANY</span><span class="p">;</span><span class="c1">//这个值代表自动为这个字段填入本机的IP地址  </span>
-<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_zero</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">myaddr</span><span class="p">.</span><span class="n">sin_zero</span><span class="p">));</span>
+<div class="highlight"><pre>myaddr.sin_family = AF_INET;  
+myaddr.sin_port = htons(SERVER_PORT);  
+myaddr.sin_addr.s_addr = INADDR_ANY;//这个值代表自动为这个字段填入本机的IP地址  
+memset(&amp;myaddr.sin_zero, 0, sizeof(myaddr.sin_zero));
 </pre></div>
 
 
 <p>接下来要将socket和配置的地址绑定</p>
-<div class="highlight"><pre><span class="n">bind</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">myaddr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span><span class="p">))</span>
+<div class="highlight"><pre>bind(sockfd, (struct sockaddr *)&amp;myaddr, sizeof(struct sockaddr))
 </pre></div>
 
 
 <p>如果返回值为-1代表出错；<br />
 接下来设置同时接收请求的最大数量</p>
-<div class="highlight"><pre><span class="n">listen</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="n">NUM</span><span class="p">)</span>
+<div class="highlight"><pre>listen(sockfd, NUM)
 </pre></div>
 
 
 <p>NUM代表最大的同时请求的数量，这个函数在tcp连接中才有用 ...</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/11/11/socket_basic.html" rel="bookmark" title="Permalink to socket基本用法">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/11/11/socket_basic.html" rel="bookmark" title="Permalink to socket基本用法">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/learning.html">learning</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/socket.html">socket</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/learning.html">learning</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/socket.html">socket</a>
+                                </div>
 
 
 
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark" title="Permalink to windows下用eclipse开发C++">windows下用eclipse开发C++</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-10-10T00:00:00"> 2013-10-10 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>eclipse + cdt + mingw的一些配置
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark" title="Permalink to windows下用eclipse开发C++">windows下用eclipse开发C++</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2013-10-10T00:00:00+08:00"> 2013-10-10 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>eclipse + cdt + mingw的一些配置
 下载标准版本的eclipse（我用的是4.3.0版本的，也叫kepler），下载对应版本的CDT(8.2.0)，安装mingw，我是用mingw-get-inst-20120426.exe装的（这个版本我用的比较舒服，如果在官网上下载mingw的话，安装完可能缺少libiconv2，它是个windows运行的dll库，一般电脑上貌似没有这个库，如果没有它的话不能执行make命令），选装gcc和g++两个组件，如果按照默认路径（C:\MinGW）装可能会碰到少一点的问题。</p>
 <p>cdt有两种下载方式，可以在eclipse的help中通过install安装，也可以在网上下载，然后把下载完的压缩包解压，把里面的features文件夹和plugins文件夹复制到eclipse的根目录中，和eclipse的根目录中的features、plugins文件夹合并就行。</p>
 <p>1、头文件unresolved问题<br />
 这个可以通过在环境变量中设置PATH=MinGW\bin来解决，如果设置了这个path的话，那么eclipse会自动找mingw的一些头文件库，加入到工程中的include文件夹下面（刚创建工程的时候只有一个src目录，没有include目录）。不幸的是，有的时候可能不起作用，我的就是加入了变量，但是不管用，后来把变量删了，又重新加入了一次才管用 ...</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark" title="Permalink to windows下用eclipse开发C++">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/10/eclipse_cplusplus_windows.html" rel="bookmark" title="Permalink to windows下用eclipse开发C++">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/eclipse.html">eclipse</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/develop.html">develop</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/eclipse.html">eclipse</a>
+                                </div>
 
 
 
-				        </article></li>
-				</ol><!-- /#posts-list -->
+                        </article></li>
+                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
         
@@ -214,7 +271,7 @@ c）如果你用他的库，但是他的库中各个模块的耦合度太高，�
   </ul>
 
 <h4>Categories</h4>
-<ul>
+<ul class="blank">
 		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
 		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
 		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
@@ -222,32 +279,13 @@ c）如果你用他的库，但是他的库中各个模块的耦合度太高，�
 
 
 <h4>Tags</h4>
-	<ul>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/dp.html">DP</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/eclipse.html">eclipse</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	<ul class="blank">
 </ul>
 
 
 <nav class="widget">
   <h4>Social</h4>
-  <ul>
+  <ul class="blank">
     <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
     <li><a href="http://www.google.com">google</a></li>
   </ul>
@@ -307,6 +345,5 @@ c）如果你用他的库，但是他的库中各个模块的耦合度太高，�
   <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
-
 </body>
 </html>

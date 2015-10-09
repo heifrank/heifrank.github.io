@@ -18,8 +18,6 @@
 
 
 
-
-
 </head>
 
 <body id="index" class="home">
@@ -30,14 +28,14 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://heifrank.github.io">新世界 <strong></strong></a></h1>
+                  <h1><a href="http://heifrank.github.io/">新世界 <strong></strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://heifrank.github.io">Home</a></li>
+                <li><a href="http://heifrank.github.io/">Home</a></li>
 
 
               </ul>
@@ -51,32 +49,35 @@
 
 
         <div class="eleven columns">
-		         <ol id="post-list">
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/11/POJ_3613.html" rel="bookmark" title="Permalink to POJ 3613">POJ 3613</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-10-11T00:00:00"> 2013-10-11 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://heifrank.github.io/author/heifrank.html">heifrank</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>题意：一个无向图，求从一个顶点到另一个顶点的恰好经过k条边的最短路径，可能有自环，无重边。</p>
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="http://heifrank.github.io/pages/2013/10/11/POJ_3613.html" rel="bookmark" title="Permalink to POJ 3613">POJ 3613</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2013-10-11T00:00:00+08:00"> 2013-10-11 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="http://heifrank.github.io/author/heifrank.html"> heifrank</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>题意：一个无向图，求从一个顶点到另一个顶点的恰好经过k条边的最短路径，可能有自环，无重边。</p>
 <p>分析：这个题其实就是矩阵乘法，用了dp的思想，dp[k][i][j]代表恰好经过k条边的i到j的最短路，那么dp[k][i][j]=min{dp[k-1][i][p]+g[p][j]}（其中g是原图）。可以用矩阵乘法来做，因为对于dp[k-1][i][j]来说，只要乘以一次原图矩阵，就相当于做了一次转移，得到的就是dp[k][][]矩阵。我想说这个题除了状态设计和floyd稍微沾了一点边之外，其他一点关系都没有了，竟然看到网上好多人用写floyd的循环顺序来写这个题，真是令人费解，这个题只是改了矩阵乘法的最内层，改变了矩阵乘法的运算规则，和floyd真的没关系啊！！！</p>
 <p>另外，矩阵乘法的规则和在图中求一个点到另一个点的恰好经过k条边的方法数的规则是一样的，二者的状态转移方程也是一样的，所以矩阵乘法不需要经过任何修改就能做这种求恰好经过k条边的方法数的题，而不用像这个题还得做些修改。这些题都需要注意初始化的东西 ...</p> </div><!-- /.entry-content -->
 
-								<div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/11/POJ_3613.html" rel="bookmark" title="Permalink to POJ 3613">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="http://heifrank.github.io/pages/2013/10/11/POJ_3613.html" rel="bookmark" title="Permalink to POJ 3613">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://heifrank.github.io/tag/tu-lun.html">图论</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/poj.html">Poj</a>
-											<a class="danger label" href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a>
-								</div>
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/tu-lun.html">图论</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/poj.html">Poj</a>
+                                            <a class="danger label" href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a>
+                                </div>
 
 
 
-				        </article></li>
-				</ol><!-- /#posts-list -->
+                        </article></li>
+                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
         
@@ -88,7 +89,7 @@
   </ul>
 
 <h4>Categories</h4>
-<ul>
+<ul class="blank">
 		<li><a href="http://heifrank.github.io/category/algorithm.html">Algorithm</a></li>
 		<li><a href="http://heifrank.github.io/category/life.html">Life</a></li>
 		<li><a href="http://heifrank.github.io/category/tech.html">Tech</a></li>
@@ -96,32 +97,13 @@
 
 
 <h4>Tags</h4>
-	<ul>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-lun.html">数论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/learning.html">learning</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/zui-duan-lu.html">最短路</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/tu-lun.html">图论</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/dp.html">DP</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/shu-ju-jie-gou.html">数据结构</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/movie.html">movie</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/sui-bi.html">随笔</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/design.html">design</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/stldie-dai-qi.html">STL迭代器</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/su-shu.html">素数</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/chai-fen-yue-shu.html">差分约束</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/eclipse.html">eclipse</a></li>
-	    <li class="tag-2"><a href="http://heifrank.github.io/tag/develop.html">develop</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/zi-fu-chuan.html">字符串</a></li>
-	    <li class="tag-1"><a href="http://heifrank.github.io/tag/poj.html">Poj</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/socket.html">socket</a></li>
-	    <li class="tag-4"><a href="http://heifrank.github.io/tag/ju-zhen-cheng-fa.html">矩阵乘法</a></li>
+	<ul class="blank">
 </ul>
 
 
 <nav class="widget">
   <h4>Social</h4>
-  <ul>
+  <ul class="blank">
     <li><a href="http://blog.sina.com.cn/u/2310559855">my sina blog</a></li>
     <li><a href="http://www.google.com">google</a></li>
   </ul>
@@ -181,6 +163,5 @@
   <script src="http://heifrank.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/libs/gumby.min.js"></script>
   <script src="http://heifrank.github.io/theme/js/plugins.js"></script>
-
 </body>
 </html>
