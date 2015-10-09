@@ -1,4 +1,4 @@
-Title: django制作first app（1）
+Title: django制作first app(1)
 Date: 2015-10-7
 Category: Tech
 Tags: develop, django, migrate
