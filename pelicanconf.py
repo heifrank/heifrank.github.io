@@ -39,9 +39,9 @@ DISQUS_SITENAME = 'heifrank27'
 GOOGLE_ANALYTICS = 'UA-44573192-1'
 
 
-THEME = r'C:/Users/songyang/AppData/Local/GitHub/pelican-themes/gum'
-PLUGIN_PATH = r"C:/Users/songyang/AppData/Local/GitHub/pelican-plugins"
-PLUGINS = ["sitemap"]
+THEME = r'/Users/heifrank/Downloads/pelican-themes/gum'
+# PLUGIN_PATH = r"C:/Users/songyang/AppData/Local/GitHub/pelican-plugins"
+# PLUGINS = ["sitemap"]
 
 SITEMAP = {
 	"format": "xml",
